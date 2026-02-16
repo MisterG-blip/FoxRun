@@ -1,0 +1,79 @@
+{
+  "id": 4,
+  "worldId": "world1",
+  "name": "Der Rittersaal",
+  "story": "Durchsuche den Saal. Er hat bestimmt ein Geheimnis",
+  "width": 1800,
+  "height": 1200,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1180, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1200 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1200 },
+
+    { "x": 0,    "y": 1100, "width": 1800, "height": 100 },
+
+    { "x": 600,  "y": 900,  "width": 200,  "height": 20 },
+    { "x": 600,  "y": 600,  "width": 200,  "height": 20 },
+    { "x": 600,  "y": 200,  "width": 200,  "height": 20 },
+
+    { "x": 900,  "y": 800,  "width": 250,  "height": 20 },
+    { "x": 900,  "y": 140,  "width": 250,  "height": 20 },
+    { "x": 900,  "y": 400,  "width": 250,  "height": 20 },
+
+    { "x": 1200, "y": 700,  "width": 200,  "height": 20 },
+    { "x": 1480, "y": 980,  "width": 300,  "height": 20 },
+        
+    { "x": 20,   "y": 920,  "width": 260,  "height": 20 }
+  ],
+
+  "coins": [
+    { "x": 150,  "y": 890 },
+    { "x": 650,  "y": 870 },
+    { "x": 1250, "y": 670 }
+  ],
+
+  "key":  { "x": 950,  "y": 770 },
+  "door": { "x": 1520, "y": 1000, "width": 60, "height": 100 },
+  "goal": { "x": 1560, "y": 1040 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  600,
+      "patrolRight": 800,
+      "speed": 1.2,
+      "dialog": [
+        "Hier geibt es einen Hebel, ich weiß nicht was der macht",
+        "Ich glaube, er war ganz oben versteckt!",
+        "Hast du den Hebel schon gefunden?"
+      ]
+    }
+  ],  
+
+  "switches": [
+    {
+      "id": "switch_hidden",
+      "x": 1000,
+      "y": 90,
+      "targets": ["secret_door_1"],
+      "hint": "Ein alter Hebel! Du hörst ein Kratzen hinter der Wand..."
+    }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "secret_door_1",
+      "x": 1480,
+      "y": 1000,
+      "width": 60,
+      "height": 100
+    }
+  ],
+
+  "playerStart": { "x": 100, "y": 1000 }
+}

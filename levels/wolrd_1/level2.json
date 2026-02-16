@@ -1,0 +1,33 @@
+{
+    "id": 2,
+    "worldId": "world1",
+    "name": "Die große Halle",
+    "story": "Das ist so groß, da muss ich wohl 2 Mal springen!",
+    "width": 2000,
+    "height": 1400,
+    "groundY": 1400,
+    "walls": [
+      {"x": 0, "y": 0, "width": 2000, "height": 20},
+      {"x": 0, "y": 1380, "width": 2000, "height": 20},
+      {"x": 0, "y": 0, "width": 20, "height": 1400},
+      {"x": 1980, "y": 0, "width": 20, "height": 1400},
+
+      {"x": 100, "y": 1200, "width": 200, "height": 20},
+      {"x": 300, "y": 1100, "width": 200, "height": 20},
+      {"x": 500, "y": 1000, "width": 200, "height": 20},
+      {"x": 800, "y": 800, "width": 400, "height": 20},
+      {"x": 1300, "y": 900, "width": 300, "height": 20},
+      {"x": 1700, "y": 1000, "width": 200, "height": 20},
+      
+      {"x": 0, "y": 1300, "width": 2000, "height": 100}
+    ],
+    "coins": [
+      {"x": 400, "y": 1070},
+      {"x": 1000, "y": 770},
+      {"x": 1750, "y": 970}
+    ],
+    "key": {"x": 1400, "y": 870},
+    "door": {"x": 1800, "y": 1300, "width": 50, "height": 100},
+    "goal": {"x": 1850, "y": 1250},
+    "playerStart": {"x": 150, "y": 1200}
+  }
