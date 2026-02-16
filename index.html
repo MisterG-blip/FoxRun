@@ -34,17 +34,6 @@
 
   <button id="muteBtn" title="Ton ein/aus">🔊</button>
 
-  <!-- Touch Controls (nur auf Touch-Geräten sichtbar) -->
-  <div id="touchControls">
-    <div id="touchDpad">
-      <button class="touch-btn" data-action="left">←</button>
-      <button class="touch-btn" data-action="right">→</button>
-      <button class="touch-btn" data-action="down">↓</button>
-    </div>
-    <button id="touchJump" class="touch-btn-large">A</button>
-    <button id="touchInteract" class="touch-btn-small">F</button>
-  </div>
-
   <div id="controls">
     <strong>Steuerung:</strong><br>
     WASD / Pfeiltasten: Bewegen<br>
@@ -56,6 +45,22 @@
   <div id="message">
     <div id="messageText"></div>
     <button id="restartButton">Neu starten</button>
+  </div>
+</div>
+
+<!-- Touch Controls (außerhalb des Canvas, nur Mobile) -->
+<div id="touchControls">
+  <!-- Links: Bewegung -->
+  <div id="touchMovement">
+    <button class="touch-btn" data-action="left">←</button>
+    <button class="touch-btn" data-action="right">→</button>
+  </div>
+  
+  <!-- Rechts: Aktionen -->
+  <div id="touchActions">
+    <button class="touch-btn" data-action="sniff">F</button>
+    <button class="touch-btn" data-action="jump">A</button>
+    <button class="touch-btn" data-action="down">↓</button>
   </div>
 </div>
 
