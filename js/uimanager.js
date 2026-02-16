@@ -12,6 +12,15 @@ class UIManager {
     this.setupFilterOverlay();
   }
 
+  // Helper: Touch-friendly Event Listener (click + touchend)
+  addTouchClick(element, callback) {
+    element.addEventListener('click', callback);
+    element.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      callback();
+    }, { passive: false });
+  }
+
   // ========================================================================
   // WORLD SELECT SCREEN (NEU!)
   // ========================================================================
@@ -63,7 +72,7 @@ class UIManager {
           <div class="world-progress">${completed}/${levels.length} Level</div>
         `;
         
-        worldCard.addEventListener('click', () => {
+        this.addTouchClick(worldCard, () => {
           this.showLevelSelect(world.id);
         });
       } else {
@@ -132,13 +141,13 @@ class UIManager {
       </div>
     `;
 
-    document.getElementById('btnRetry').addEventListener('click', () => {
+    this.addTouchClick(document.getElementById('btnRetry'), () => {
       this.game.retryLevel();
     });
-    document.getElementById('btnNextLevel').addEventListener('click', () => {
+    this.addTouchClick(document.getElementById('btnNextLevel'), () => {
       this.game.nextLevel();
     });
-    document.getElementById('btnBackToWorlds').addEventListener('click', () => {
+    this.addTouchClick(document.getElementById('btnBackToWorlds'), () => {
       this.showWorldSelect();
     });
   }
@@ -227,11 +236,11 @@ class UIManager {
       </div>
     `;
 
-    document.getElementById('btnBackToWorldSelect').addEventListener('click', () => {
+    this.addTouchClick(document.getElementById('btnBackToWorldSelect'), () => {
       this.showWorldSelect();
     });
 
-    document.getElementById('btnResetSave').addEventListener('click', () => {
+    this.addTouchClick(document.getElementById('btnResetSave'), () => {
       if (confirm('Wirklich den gesamten Fortschritt löschen?')) {
         this.game.saveSystem.reset();
         location.reload();
@@ -279,7 +288,7 @@ class UIManager {
           </div>
         `;
         
-        levelCard.addEventListener('click', () => {
+        this.addTouchClick(levelCard, () => {
           this.game.loadLevel(levelData.id);
         });
       } else {
@@ -326,7 +335,7 @@ class UIManager {
     document.getElementById('gameContainer').appendChild(overlay);
 
     filterBtn.addEventListener('click', () => this.showFilterOverlay());
-    document.getElementById('filterClose').addEventListener('click', () => {
+    this.addTouchClick(document.getElementById('filterClose'), () => {
       overlay.classList.remove('show');
     });
   }
@@ -347,7 +356,7 @@ class UIManager {
     const noneCard = document.createElement('div');
     noneCard.className = `filter-card ${!activeId ? 'active' : ''}`;
     noneCard.innerHTML = `<div class="filter-preview" style="background:#654321"></div><span>Normal</span>`;
-    noneCard.addEventListener('click', () => this._setFilter(null));
+    this.addTouchClick(noneCard, () => this._setFilter(null));
     grid.appendChild(noneCard);
 
     // Alle Filter
@@ -365,7 +374,7 @@ class UIManager {
         <span>${isUnlocked ? f.name : `🔒 ${f.threshold}🪙`}</span>
       `;
       if (isUnlocked) {
-        card.addEventListener('click', () => this._setFilter(f.id));
+        this.addTouchClick(card, () => this._setFilter(f.id));
       }
       grid.appendChild(card);
     }

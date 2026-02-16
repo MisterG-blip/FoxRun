@@ -45,6 +45,39 @@ class Game {
     this.levelsLoaded = false;
 
     this.setupInputHandlers();
+    this.setupCanvasScaling();
+  }
+
+  setupCanvasScaling() {
+    const scaleCanvas = () => {
+      const container = document.getElementById('gameContainer');
+      const canvas = this.canvas;
+      
+      const scaleX = container.clientWidth / CANVAS_WIDTH;
+      const scaleY = container.clientHeight / CANVAS_HEIGHT;
+      const scale = Math.min(scaleX, scaleY);
+      
+      canvas.style.transform = `scale(${scale})`;
+      canvas.style.transformOrigin = 'top left';
+      
+      // Container muss die skalierte Canvas-Größe aufnehmen
+      // Zentriere Canvas im Container wenn Platz übrig ist
+      const scaledWidth = CANVAS_WIDTH * scale;
+      const scaledHeight = CANVAS_HEIGHT * scale;
+      const offsetX = (container.clientWidth - scaledWidth) / 2;
+      const offsetY = (container.clientHeight - scaledHeight) / 2;
+      
+      canvas.style.marginLeft = `${offsetX}px`;
+      canvas.style.marginTop = `${offsetY}px`;
+    };
+
+    // Initial + bei Resize
+    scaleCanvas();
+    window.addEventListener('resize', scaleCanvas);
+    // Für Mobile: auch bei Orientation Change
+    window.addEventListener('orientationchange', () => {
+      setTimeout(scaleCanvas, 100);
+    });
   }
 
   async initialize() {

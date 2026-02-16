@@ -95,49 +95,37 @@ class InputSystem {
   // TOUCH INPUT (Mobile)
   // ========================================================================
   setupTouch() {
-    // Touch Controls Buttons
-    const setupButton = (id, action) => {
-      const btn = document.getElementById(id);
-      if (!btn) return;
-      
+    // Alle Touch Buttons durchgehen
+    document.querySelectorAll('.touch-btn').forEach(btn => {
+      const action = btn.dataset.action;
+      if (!action) return;
+
+      // Map data-action to input state
+      const actionMap = {
+        'left': 'left',
+        'right': 'right',
+        'down': 'crouch',
+        'jump': 'jump',
+        'sniff': 'sniff'
+      };
+
+      const inputAction = actionMap[action];
+      if (!inputAction) return;
+
       btn.addEventListener('touchstart', (e) => {
         e.preventDefault();
-        this.handleTouchAction(action, true);
+        this.handleTouchAction(inputAction, true);
       }, { passive: false });
-      
+
       btn.addEventListener('touchend', (e) => {
         e.preventDefault();
-        this.handleTouchAction(action, false);
+        this.handleTouchAction(inputAction, false);
       }, { passive: false });
-      
-      btn.addEventListener('touchcancel', (e) => {
-        this.handleTouchAction(action, false);
+
+      btn.addEventListener('touchcancel', () => {
+        this.handleTouchAction(inputAction, false);
       });
-    };
-
-    // D-Pad Buttons
-    document.querySelectorAll('#touchDpad .touch-btn').forEach(btn => {
-      const action = btn.dataset.action;
-      if (action) {
-        btn.addEventListener('touchstart', (e) => {
-          e.preventDefault();
-          this.handleTouchAction(action === 'down' ? 'crouch' : action, true);
-        }, { passive: false });
-        
-        btn.addEventListener('touchend', (e) => {
-          e.preventDefault();
-          this.handleTouchAction(action === 'down' ? 'crouch' : action, false);
-        }, { passive: false });
-        
-        btn.addEventListener('touchcancel', (e) => {
-          this.handleTouchAction(action === 'down' ? 'crouch' : action, false);
-        });
-      }
     });
-
-    // Action Buttons
-    setupButton('touchJump', 'jump');
-    setupButton('touchInteract', 'sniff');
   }
 
   handleTouchAction(action, pressed) {
