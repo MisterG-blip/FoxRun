@@ -726,99 +726,6 @@ body {
   100% { transform: scale(1);   opacity: 1; }
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   TOUCH CONTROLS (Mobile)
-   ══════════════════════════════════════════════════════════════════════════ */
-#touchControls {
-  display: none; /* Desktop: versteckt */
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 15;
-}
-
-/* Touch-Gerät erkannt → Controls anzeigen */
-@media (pointer: coarse) {
-  #touchControls {
-    display: block;
-  }
-  #controls {
-    display: none; /* Desktop-Steuerungsanzeige ausblenden */
-  }
-}
-
-/* D-Pad: links unten */
-#touchDpad {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 140px;
-  height: 140px;
-  display: grid;
-  grid-template-areas:
-    ".    up   ."
-    "left .  right"
-    ".   down  .";
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 4px;
-  pointer-events: auto;
-}
-
-#touchDpad [data-action="left"]  { grid-area: left; }
-#touchDpad [data-action="right"] { grid-area: right; }
-#touchDpad [data-action="down"]  { grid-area: down; }
-
-.touch-btn {
-  background: rgba(255,255,255,0.15);
-  border: 2px solid rgba(255,255,255,0.3);
-  border-radius: 8px;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  backdrop-filter: blur(5px);
-  cursor: pointer;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.touch-btn:active {
-  background: rgba(255,255,255,0.35);
-  transform: scale(0.95);
-}
-
-/* Jump Button: rechts unten */
-#touchJump {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  width: 70px;
-  height: 70px;
-  background: rgba(255, 100, 100, 0.25);
-  border: 3px solid rgba(255, 100, 100, 0.5);
-  border-radius: 50%;
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  backdrop-filter: blur(5px);
-  pointer-events: auto;
-  cursor: pointer;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#touchJump:active {
-  background: rgba(255, 100, 100, 0.45);
-  transform: scale(0.92);
-}
 
 /* Interact Button: rechts mittig */
 #touchInteract {
@@ -847,4 +754,91 @@ body {
 #touchInteract:active {
   background: rgba(100, 200, 255, 0.45);
   transform: scale(0.92);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   TOUCH CONTROLS (außerhalb Canvas, nur Mobile)
+   ══════════════════════════════════════════════════════════════════════════ */
+#touchControls {
+  display: none;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@media (pointer: coarse) {
+  #touchControls {
+    display: block;
+  }
+  #controls {
+    display: none;
+  }
+}
+
+/* Links: Bewegung (← →) */
+#touchMovement {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+/* Rechts: Aktionen (F / A / ↓) */
+#touchActions {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+/* Touch Button Basis-Style */
+.touch-btn {
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.15);
+  border: 3px solid rgba(255,255,255,0.35);
+  border-radius: 12px;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s, background 0.1s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.touch-btn:active {
+  background: rgba(255,255,255,0.35);
+  transform: scale(0.92);
+}
+
+/* Spezielle Farben */
+#touchActions [data-action="jump"] {
+  background: rgba(255, 100, 100, 0.25);
+  border-color: rgba(255, 100, 100, 0.5);
+}
+
+#touchActions [data-action="jump"]:active {
+  background: rgba(255, 100, 100, 0.45);
+}
+
+#touchActions [data-action="sniff"] {
+  background: rgba(100, 200, 255, 0.25);
+  border-color: rgba(100, 200, 255, 0.5);
+}
+
+#touchActions [data-action="sniff"]:active {
+  background: rgba(100, 200, 255, 0.45);
 }
