@@ -95,45 +95,49 @@ class InputSystem {
   // TOUCH INPUT (Mobile)
   // ========================================================================
   setupTouch() {
-    const touchButtons = this.createTouchButtons();
-    
-    // Touch Start
-    document.addEventListener('touchstart', (e) => {
-      for (let touch of e.changedTouches) {
-        const element = document.elementFromPoint(touch.clientX, touch.clientY);
-        if (!element) continue;
+    // Touch Controls Buttons
+    const setupButton = (id, action) => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+      
+      btn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        this.handleTouchAction(action, true);
+      }, { passive: false });
+      
+      btn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        this.handleTouchAction(action, false);
+      }, { passive: false });
+      
+      btn.addEventListener('touchcancel', (e) => {
+        this.handleTouchAction(action, false);
+      });
+    };
+
+    // D-Pad Buttons
+    document.querySelectorAll('#touchDpad .touch-btn').forEach(btn => {
+      const action = btn.dataset.action;
+      if (action) {
+        btn.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          this.handleTouchAction(action === 'down' ? 'crouch' : action, true);
+        }, { passive: false });
         
-        const action = element.dataset.action;
-        if (action) {
-          this.handleTouchAction(action, true);
-          this.activeTouches.set(touch.identifier, action);
-        }
-      }
-      e.preventDefault();
-    }, { passive: false });
-
-    // Touch End
-    document.addEventListener('touchend', (e) => {
-      for (let touch of e.changedTouches) {
-        const action = this.activeTouches.get(touch.identifier);
-        if (action) {
-          this.handleTouchAction(action, false);
-          this.activeTouches.delete(touch.identifier);
-        }
-      }
-      e.preventDefault();
-    }, { passive: false });
-
-    // Touch Cancel
-    document.addEventListener('touchcancel', (e) => {
-      for (let touch of e.changedTouches) {
-        const action = this.activeTouches.get(touch.identifier);
-        if (action) {
-          this.handleTouchAction(action, false);
-          this.activeTouches.delete(touch.identifier);
-        }
+        btn.addEventListener('touchend', (e) => {
+          e.preventDefault();
+          this.handleTouchAction(action === 'down' ? 'crouch' : action, false);
+        }, { passive: false });
+        
+        btn.addEventListener('touchcancel', (e) => {
+          this.handleTouchAction(action === 'down' ? 'crouch' : action, false);
+        });
       }
     });
+
+    // Action Buttons
+    setupButton('touchJump', 'jump');
+    setupButton('touchInteract', 'sniff');
   }
 
   handleTouchAction(action, pressed) {
