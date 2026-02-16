@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fox Run - Labyrinth Adventure</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="gameContainer">
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Splash Screen -->
+  <div id="splashScreen">
+    <img id="splashImage" src="assets/splash.png" alt="Splash"
+         onerror="this.style.display='none'; document.getElementById('splashFallback').style.display='flex'">
+    <div id="splashFallback">
+      <h1>🦊</h1>
+      <h2>Fox Run</h2>
+    </div>
+    <div id="splashHint">Klicken oder warten...</div>
+  </div>
+  
+  <div id="hud">
+    <div class="hud-item">
+      <span class="icon">🪙</span>
+      <span>Münzen: <span id="coinCount">0</span>/<span id="totalCoins">5</span></span>
+    </div>
+    <div class="hud-item">
+      <span class="icon key-icon">🔑</span>
+      <span>Schlüssel: <span id="keyCount">0</span></span>
+    </div>
+  </div>
+
+  <button id="muteBtn" title="Ton ein/aus">🔊</button>
+
+  <div id="controls">
+    <strong>Steuerung:</strong><br>
+    WASD / Pfeiltasten: Bewegen<br>
+    Leertaste / W: Springen<br>
+    C / S: Kriechen<br>
+    F: Schnüffeln 🐾
+  </div>
+
+  <div id="message">
+    <div id="messageText"></div>
+    <button id="restartButton">Neu starten</button>
+  </div>
+</div>
+
+<!-- Lade Module in richtiger Reihenfolge -->
+<script src="js/config.js"></script>
+<script src="js/inputsystem.js"></script>
+<script src="js/savesystem.js"></script>
+<script src="js/worldmanager.js"></script>
+<script src="js/levelloader.js"></script>
+<script src="js/backgroundrenderer.js"></script>
+<script src="js/switch.js"></script>
+<script src="js/passage.js"></script>
+<script src="js/npc.js"></script>
+<script src="js/player.js"></script>
+<script src="js/collectibles.js"></script>
+<script src="js/level.js"></script>
+<script src="js/uimanager.js"></script>
+<script src="js/audiosystem.js"></script>
+<script src="js/game.js"></script>
+
+<script>
+  // ── Splash Screen ──────────────────────────────────────────────────────────
+  const splash     = document.getElementById('splashScreen');
+  const SPLASH_MS  = 5000;
+  let   splashDone = false;
+  let   gameInstance = null;
+
+  function dismissSplash() {
+    if (splashDone) return;
+    splashDone = true;
+
+    splash.classList.add('splash-out');
+    setTimeout(() => {
+      splash.style.display = 'none';
+      startGame();
+    }, 600);  // CSS-Transition
+  }
+
+  function startGame() {
+    const game = new Game();
+    game.start();
+  }
+
+  // Klick oder Taste → sofort weiter
+  splash.addEventListener('click',    dismissSplash);
+  document.addEventListener('keydown', dismissSplash, { once: true });
+  document.addEventListener('touchstart', dismissSplash, { once: true });
+
+  // Automatisch nach 5s
+  setTimeout(dismissSplash, SPLASH_MS);
+</script>
+</body>
+</html>
