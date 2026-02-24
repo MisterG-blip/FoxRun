@@ -242,9 +242,12 @@ class Game {
       this.player.facingRight = true;
     }
     
-    // Springen
+    // Springen (nicht erlaubt wenn unter niedriger Decke)
     if (input.jump && !this.player.lastJumpState) {
-      if (this.player.jump()) {
+      const activeWalls = this.level.getActiveWalls();
+      const canJump = !this.player.isCrouching || this.player.canStandUp(activeWalls);
+      
+      if (canJump && this.player.jump()) {
         this.audio.playSound('jump');
       }
     }
@@ -340,9 +343,12 @@ class Game {
     const hasAllCoins = this.coinsCollected >= (levelData.coins?.length || 3);
     const hasKey      = this.keysCollected > 0;
 
-    // Geheimnisse: war eine Passage im Level und wurde sie entdeckt?
-    const hasPassage     = this.level.passages.length > 0;
-    const secretFound    = this.level.passages.some(p => p.discovered);
+    // Geheimnisse: nur Passages mit countsAsSecret=true zählen
+    const secretPassages = this.level.passages.filter(p => p.countsAsSecret);
+    const discoveredSecrets = secretPassages.filter(p => p.discovered).length;
+    const totalSecrets = secretPassages.length;
+    const hasPassage = totalSecrets > 0;
+    const secretFound = hasPassage && discoveredSecrets === totalSecrets;
 
     // Fortschritt speichern
     let saveData = this.saveSystem.load();
@@ -390,7 +396,9 @@ class Game {
       hasPassage,
       secretFound,
       saveData.totalCoins,
-      newFilter
+      newFilter,
+      discoveredSecrets,
+      totalSecrets
     );
   }
 
@@ -444,6 +452,7 @@ class Game {
     this.level.update();
     this.level.updateNpcs(deltaTime, this.player.x + 20, this.player.y);
     this.level.updateSwitches(this.player.x + 20, this.player.y);
+    this.level.updateSecretDoors();
     this.level.updatePassages(
       this.player.x + 20,
       this.player.y,

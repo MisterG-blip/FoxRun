@@ -24,7 +24,7 @@
 //   ]
 // ============================================================================
 
-const PASSAGE_SNIFF_RADIUS = 250;
+const PASSAGE_SNIFF_RADIUS = 80;
 
 class Passage {
   constructor(data) {
@@ -37,6 +37,9 @@ class Passage {
 
     // Versteckter Bereich der überlagert wird
     this.hiddenArea = data.hiddenArea || null;
+
+    // Zählt diese Passage fürs Geheimnis? (default: true)
+    this.countsAsSecret = data.countsAsSecret !== undefined ? data.countsAsSecret : true;
 
     // Zustand
     this.discovered     = false;   // true sobald Spieler reingegangen ist

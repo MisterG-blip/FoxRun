@@ -259,15 +259,43 @@ class SecretDoor {
     this.theme        = theme;
     this.isOpen       = false;
     this.openProgress = 0;
+    
+    // Multi-Switch Puzzle: Tür öffnet nur wenn ALLE Schalter an sind
+    this.requiresAll  = data.requiresAll || null;  // ["switch_1", "switch_2", ...]
   }
 
-  update() {
+  update(switches) {
+    // Normale Öffnungs-Animation
     if (this.isOpen && this.openProgress < 1) {
       this.openProgress = Math.min(1, this.openProgress + 0.04);
     }
+    
+    // Multi-Switch Puzzle: Prüfe ob alle required Schalter an sind
+    if (this.requiresAll && switches) {
+      const allOn = this.requiresAll.every(id => {
+        const sw = switches.find(s => s.id === id);
+        return sw && sw.isOn;
+      });
+      
+      if (allOn && !this.isOpen) {
+        this.open();
+      } else if (!allOn && this.isOpen) {
+        this.close();
+      }
+    } else if (!this.isOpen && this.openProgress < 1) {
+      // Normal geschlossen: Animation zurücksetzen
+      this.openProgress = Math.max(0, this.openProgress - 0.04);
+    }
   }
 
-  open() { this.isOpen = true; }
+  open() { 
+    this.isOpen = true; 
+  }
+  
+  close() {
+    this.isOpen = false;
+    this.openProgress = 0;
+  }
 
   // Gibt Wall zurück solange nicht offen (für Kollision)
   getWall() {

@@ -9,7 +9,7 @@ const CANVAS_HEIGHT = 600;
 const TILE_SIZE = 40;
 
 // Debug Modus (true = zeigt Hitboxen an)
-const DEBUG_MODE = false;
+const DEBUG_MODE = true;
 
 // ============================================================================
 // ANIMATIONEN KONFIGURATION

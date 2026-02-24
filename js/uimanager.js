@@ -152,7 +152,7 @@ class UIManager {
     });
   }
 
-  showResultScreen(levelData, coins, hasKey, hasPassage, secretFound, totalCoins = 0, newFilter = null) {
+  showResultScreen(levelData, coins, hasKey, hasPassage, secretFound, totalCoins = 0, newFilter = null, discoveredSecrets = 0, totalSecrets = 0) {
     const resultScreen = document.getElementById('resultScreen');
     const totalInLevel = levelData.coins?.length || 3;
 
@@ -167,7 +167,7 @@ class UIManager {
       ? 'Gut gemacht! Du hast den Schlüssel gefunden!'
       : 'Level geschafft, aber du kannst noch mehr entdecken!';
 
-    // Geheimnis-Zeile
+    // Geheimnis-Zeile mit Fortschritt
     const secretRow  = document.getElementById('resultSecretRow');
     const secretIcon = document.getElementById('resultSecretIcon');
     const secretText = document.getElementById('resultSecretText');
@@ -179,11 +179,11 @@ class UIManager {
     } else if (secretFound) {
       secretRow.style.opacity = '1';
       secretIcon.textContent  = '🔍';
-      secretText.innerHTML    = '<strong>Geheimnis entdeckt!</strong> ✅';
+      secretText.innerHTML    = `<strong>Alle Geheimnisse entdeckt!</strong> ✅ (${totalSecrets}/${totalSecrets})`;
     } else {
       secretRow.style.opacity = '1';
       secretIcon.textContent  = '❓';
-      secretText.innerHTML    = 'Geheimnis <em>verpasst</em> — spiel nochmal!';
+      secretText.innerHTML    = `Geheimnisse <em>unvollständig</em> — ${discoveredSecrets}/${totalSecrets} entdeckt`;
     }
 
     // Neuer Filter freigeschaltet?

@@ -19,8 +19,14 @@ class Level {
     this.keys = [];
     this.doors = [];
     this.switches     = [];
-    this.secretDoors  = [];
-    this.passages     = [];
+    this.switchesById = {};
+    // Angeblich bruach ichd as nicht, weil die Sachen
+    //this.secretDoors  = [];
+    //this.passages     = [];
+    //for (const sw of this.switches) {
+    //  this.switchesById[sw.id] = sw;
+    //}
+
     this.goal = null;
     
     this.loadFromData(levelData);
@@ -67,6 +73,22 @@ class Level {
     //   { "type": "banner", "x": 600, "y": 920, "width": 32, "height": 64 }
     // ]
     this.decorations = data.decorations || [];
+
+    //Hier wird dei Puzzel Logik aufgerufen
+    this.switchesById = {};
+    for (const sw of this.switches) {
+      this.switchesById[sw.id] = sw;
+    }
+
+    this.puzzle = null;
+
+    if (data.puzzle) {
+      this.puzzle = new ConditionPuzzle(
+        this.switchesById, 
+        this.secretDoors, 
+        data.puzzle
+      );
+    }
   }
 
   update() {
@@ -113,6 +135,26 @@ class Level {
     }
   }
 
+  // Secret Doors updaten — Multi-Switch Puzzle Logik
+  updateSecretDoors() {
+    for (const door of this.secretDoors) {
+      // requiresAll Puzzle (altes System, weiterhin unterstützt)
+      if (door.requiresAll && !this.puzzle) {
+        const allOn = door.requiresAll.every(id => {
+          const sw = this.switches.find(s => s.id === id);
+          return sw && sw.isOn;
+        });
+        if (allOn && !door.isOpen) {
+          door.open();
+        } else if (!allOn && door.isOpen) {
+          door.close();
+        }
+      }     
+      door.update(this.switches);
+    }
+  }
+
+
   // Nächste unentdeckte Passage in Schnüffel-Reichweite
   getNearestPassage(playerX, playerY) {
     for (const p of this.passages) {
@@ -129,43 +171,40 @@ class Level {
     return null;
   }
 
-  // Switch betätigen → Targets (Türen + andere Schalter) steuern
-  activateSwitch(sw, _callStack = new Set()) {
-    // Endlosschleifen-Schutz
-    if (_callStack.has(sw.id)) {
-      console.warn(`⚠️ Endlosschleife verhindert bei Schalter "${sw.id}"`);
-      return null;
-    }
-    _callStack.add(sw.id);
-
+  // Switch betätigen (nur Player-Toggle, keine Rekursion)
+  activateSwitch(sw) {
     const msg = sw.interact();
-
-    for (const target of sw.targets) {
-      const { id, action } = target;
-
-      // Secret Door?
-      const door = this.secretDoors.find(d => d.id === id);
-      if (door) {
-        if      (action === 'open')   door.open();
-        else if (action === 'close')  { door.isOpen = false; door.openProgress = 0; }
-        else {  // toggle
-          if (door.isOpen) { door.isOpen = false; door.openProgress = 0; }
-          else door.open();
-        }
-        continue;
-      }
-
-      // Anderer Schalter?
-      const otherSw = this.switches.find(s => s.id === id);
-      if (otherSw) {
-        if      (action === 'on')     { if (!otherSw.isOn) this.activateSwitch(otherSw, _callStack); }
-        else if (action === 'off')    { if  (otherSw.isOn) this.activateSwitch(otherSw, _callStack); }
-        else {  // toggle
-          this.activateSwitch(otherSw, _callStack);
+     
+     // Puzzle informieren (wenn vorhanden)
+     if (this.puzzle) {
+       this.puzzle.onPlayerToggle(sw);
+       
+      // onSolved Events ausführen
+      if (this.puzzle.isSolved() && this.puzzle.onSolved.openDoors) {
+        for (const doorId of this.puzzle.onSolved.openDoors) {
+          const door = this.secretDoors.find(d => d.id === doorId);
+          if (door && !door.isOpen) {
+            door.open();
+            console.log(`🚪 Tür ${doorId} durch Puzzle geöffnet`);
+          }
         }
       }
-    }
-
+      } else {
+        // Alte Logik für einzelne Schalter ohne Puzzle
+        for (const target of sw.targets) {
+          const { id, action } = target;
+         
+          const door = this.secretDoors.find(d => d.id === id);
+          if (door) {
+            if      (action === 'open')   door.open();
+            else if (action === 'close')  { door.isOpen = false; door.openProgress = 0; }
+            else {  // toggle
+              if (door.isOpen) { door.isOpen = false; door.openProgress = 0; }
+              else door.open();
+            }
+          }
+        }
+      }
     return msg;
   }
 
