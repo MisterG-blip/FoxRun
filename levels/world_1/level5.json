@@ -24,7 +24,8 @@
 
     { "x": 500,  "y": 20,  "width": 30,   "height": 1035, "type": "wall" },
     { "x": 1000,  "y": 20,  "width": 30,   "height": 500, "type": "wall" },
-    { "x": 1000,  "y": 580,  "width": 30,   "height": 530, "type": "wall" }
+    { "x": 1000,  "y": 580,  "width": 30,   "height": 530, "type": "wall" },
+    { "x": 990,  "y": 580,  "width": 50,   "height": 20 }
   ],
 
   "coins": [
@@ -36,6 +37,23 @@
   "key":  { "x": 950,  "y": 770 },
   "door": { "x": 1520, "y": 1000, "width": 60, "height": 100 },
   "goal": { "x": 1560, "y": 1040 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 450,
+      "y": 950,
+      "behavior": "patrol",
+      "patrolLeft":  270,
+      "patrolRight": 450,
+      "speed": 1.2,
+      "dialog": [
+        "Hier haben die Mäuse kleine Löcher gemacht!",
+        "Duck dich, damit du kriechen kannst.",
+        "Macnhmal ist es gut klein zu sein."
+      ]
+    }
+  ],
 
   
   "passages": [

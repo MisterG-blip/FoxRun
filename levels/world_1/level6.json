@@ -1,0 +1,231 @@
+{
+  "id": 6,
+  "worldId": "world1",
+  "name": "Die Küche",
+  "story": "Mäuse gab es vorhin nicht, die sind bestimmt alle hier!",
+  "width": 1800,
+  "height": 1200,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1180, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1200 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1200 },
+
+    { "x": 0,    "y": 1100, "width": 1800, "height": 100 },
+
+    { "x": 20, "y": 300,    "width": 300,   "height": 20 },
+    { "x": 20, "y": 600,    "width": 300,   "height": 20 },
+    { "x": 20, "y": 900,    "width": 300,   "height": 20 },
+
+    { "x": 250, "y": 20,    "width": 20,   "height": 240 },
+    { "x": 250, "y": 320,    "width": 20,   "height": 240 },
+    { "x": 250, "y": 620,    "width": 20,   "height": 240 },
+
+    { "x": 650, "y": 20,    "width": 20,   "height": 240 },
+    { "x": 650, "y": 320,    "width": 20,   "height": 240 },
+    { "x": 650, "y": 620,    "width": 20,   "height": 240 },
+
+    { "x": 600, "y": 300,    "width": 600,   "height": 20 },
+    { "x": 600, "y": 600,    "width": 600,   "height": 20 },
+    { "x": 600, "y": 900,    "width": 600,   "height": 20 },
+    
+    { "x": 890, "y": 20,     "width": 20,   "height": 280},
+    { "x": 890, "y": 370,    "width": 20,   "height": 530},
+    
+    { "x": 1130, "y": 20,     "width": 20,   "height": 240 },
+    { "x": 1130, "y": 320,    "width": 20,   "height": 280 },
+    { "x": 1130, "y": 620,    "width": 20,   "height": 240 },
+
+    { "x": 1550, "y": 20,     "width": 20,   "height": 240 },
+    { "x": 1550, "y": 320,    "width": 20,   "height": 240 },
+    { "x": 1550, "y": 620,    "width": 20,   "height": 240 },
+
+    { "x": 1500, "y": 300,    "width": 300,   "height": 20 },
+    { "x": 1500, "y": 600,    "width": 300,   "height": 20 },
+    { "x": 1500, "y": 900,    "width": 300,   "height": 20 },
+
+    { "x": 400, "y": 400,    "width": 100,   "height": 20 },
+    { "x": 400, "y": 700,    "width": 100,   "height": 20 },
+
+    { "x": 1300, "y": 400,    "width": 100,   "height": 20 },
+    { "x": 1300, "y": 700,    "width": 100,   "height": 20 }
+    ],
+    
+
+  "coins": [
+    { "x": 150,  "y": 870 },
+    { "x": 950,  "y": 570 },
+    { "x": 1600, "y": 270 }
+  ],
+
+  "key":  { "x": 750,  "y": 870 },
+  "door": { "x": 1520, "y": 1000, "width": 60, "height": 100 },
+  "goal": { "x": 1560, "y": 1040 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 1050,
+      "y": 1050,
+      "behavior": "patrol",
+      "patrolLeft":  400,
+      "patrolRight": 1000,
+      "speed": 1.2,
+      "dialog": [
+        "Hast du dich in der Speisekammer voll gefressen?",
+        "Hier gibt es viele Fächer! Ich habe nicht alle gesehen.",
+        "Guck dich in Ruhe um."
+      ]
+    }
+  ],
+
+  "passages": [
+    {
+      "id": "passage_1",
+      "x": 240, "y": 250,
+      "width": 20, "height": 60,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 20, "y": 20, "width": 250, "height": 300 }
+    },
+    {
+      "id": "passage_2",
+      "x": 240, "y": 560,
+      "width": 20, "height": 60,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 20, "y": 320, "width": 250, "height": 300 }
+    },
+    {
+      "id": "passage_3",
+      "x": 240, "y": 860,
+      "width": 20, "height": 60,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 20, "y": 620, "width": 250, "height": 300 }
+    },
+    {
+      "id": "passage_4",
+      "x": 650, "y": 250,
+      "width": 20, "height": 60,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 650, "y": 20, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_5",
+      "x": 650, "y": 560,
+      "width": 20, "height": 60,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 650, "y": 320, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_6",
+      "x": 650, "y": 860,
+      "width": 20, "height": 60,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 650, "y": 620, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_7",
+      "x": 1130, "y": 250,
+      "width": 20, "height": 60,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 890, "y": 20, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_8",
+      "x": 890, "y": 300,
+      "width": 20, "height": 60,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 890, "y": 320, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_9",
+      "x": 1130, "y": 860,
+      "width": 20, "height": 60,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 890, "y": 620, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_10",
+      "x": 1550, "y": 250,
+      "width": 20, "height": 60,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1550, "y": 20, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_11",
+      "x": 1550, "y": 550,
+      "width": 20, "height": 60,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1550, "y": 320, "width": 270, "height": 300 }
+    },
+    {
+      "id": "passage_12",
+      "x": 1550, "y": 860,
+      "width": 20, "height": 60,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1550, "y": 620, "width": 270, "height": 300 }
+    }
+  ],
+
+  "switches": [
+    {
+      "id": "switch_1",
+      "x": 80,
+      "y": 550,
+      "targets": ["secret_door_1"],
+      "hint": "Ein Hebel! Du hörst ein Knartzen von rechts oben..."
+    },
+    {
+      "id": "switch_2",
+      "x": 780,
+      "y": 250,
+      "targets": ["secret_door_2"],
+      "hint": "Ein Hebel! Du hörst ein Knartzen hinter der Wand..."
+    },
+    {
+      "id": "switch_3",
+      "x": 950,
+      "y": 250,
+      "targets": ["secret_door_3"],
+      "hint": "Ein Hebel! Du hörst ein Knartzen, aber woher?"
+    }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "secret_door_1",
+      "x": 650,
+      "y": 250,
+      "width": 20,
+      "height": 50
+    },
+    {
+      "id": "secret_door_2",
+      "x": 1550,
+      "y": 250,
+      "width": 20,
+      "height": 50
+    },
+    {
+      "id": "secret_door_3",
+      "x": 650,
+      "y": 550,
+      "width": 20,
+      "height": 50
+    }
+  ],
+
+  "playerStart": { "x": 100, "y": 1000 }
+}

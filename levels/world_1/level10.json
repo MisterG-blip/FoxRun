@@ -1,0 +1,246 @@
+{
+  "id": 10,
+  "worldId": "world1",
+  "name": "Der Wall",
+  "story": "Na hier ist wohl nichts mehr. Komm - Wir gehen zum Dorf.",
+  "width": 1800,
+  "height": 1300,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1280, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1300 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1300 },
+
+    { "x": 0,    "y": 1200, "width": 1800, "height": 100 },
+
+
+    { "x": 200,    "y": 1000, "width": 100, "height": 100, "type": "walls" },
+    { "x": 400,    "y": 800, "width": 100, "height": 100, "type": "walls" },
+    { "x": 800,    "y": 400, "width": 100, "height": 100, "type": "walls" },
+
+
+    { "x": 300,    "y": 1000, "width": 1300, "height": 20 },
+    { "x": 500,    "y": 800, "width": 1000, "height": 20 },
+    { "x": 600,    "y": 600, "width": 800, "height": 20 },
+    { "x": 900,    "y": 400, "width": 400, "height": 20 },
+    { "x": 1000,    "y": 200, "width": 200, "height": 20 },
+
+    { "x": 600,    "y": 680, "width": 100, "height": 20 },
+    { "x": 1000,    "y": 280, "width": 100, "height": 20 },    
+
+    { "x": 500,    "y": 1020, "width": 20, "height": 80 },
+    { "x": 800,    "y": 1020, "width": 20, "height": 80 },
+    { "x": 1100,    "y": 1020, "width": 20, "height": 80 },
+    { "x": 1400,    "y": 1020, "width": 20, "height": 80 },
+    { "x": 1580,    "y": 1020, "width": 20, "height": 180 },
+
+    { "x": 700,    "y": 820, "width": 20, "height": 80 },
+    { "x": 1000,    "y": 820, "width": 20, "height": 80 },
+    { "x": 1300,    "y": 820, "width": 20, "height": 80 },
+    { "x": 1480,    "y": 820, "width": 20, "height": 180 },
+
+    { "x": 600,    "y": 620, "width": 20, "height": 80 },
+    { "x": 900,    "y": 620, "width": 20, "height": 80 },
+    { "x": 1200,    "y": 620, "width": 20, "height": 80 },
+    { "x": 1380,    "y": 620, "width": 20, "height": 180 },
+
+    { "x": 1100,    "y": 420, "width": 20, "height": 80 },
+    { "x": 1280,    "y": 420, "width": 20, "height": 180 },
+
+    { "x": 1000,    "y": 220, "width": 20, "height": 80 },
+    { "x": 1180,    "y": 220, "width": 20, "height": 180 }
+    ],
+
+  "coins": [
+    { "x": 650,  "y": 670 },
+    { "x": 1430, "y": 970 },
+    { "x": 1520, "y": 1170 }
+  ],
+
+  "key":  { "x": 950,  "y": 770 },
+  "door": { "x": 1620, "y": 1100, "width": 60, "height": 100 },
+  "goal": { "x": 1660, "y": 1140 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  600,
+      "patrolRight": 800,
+      "speed": 1.2,
+      "dialog": [
+        "Ich denke hier gibt es nichts mehr!",
+        "Lass uns weitergehen zum Dorf.",
+        "Ich will hier weg."
+      ]
+    }
+  ],
+
+  "passages": [
+    {
+      "id": "passage_1",
+      "x": 200, "y": 1100,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 200, "y": 1000, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_2",
+      "x": 500, "y": 1100,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 500, "y": 1000, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_3",
+      "x": 800, "y": 1100,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 800, "y": 1000, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_4",
+      "x": 1100, "y": 1100,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1100, "y": 1000, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_5",
+      "x": 1400, "y": 1100,
+      "width": 20, "height": 100,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1400, "y": 1000, "width": 220, "height": 200 }
+    },
+
+    {
+      "id": "passage_6",
+      "x": 400, "y": 900,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 400, "y": 800, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_7",
+      "x": 700, "y": 900,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 700, "y": 800, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_8",
+      "x": 1000, "y": 900,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1000, "y": 800, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_9",
+      "x": 1300, "y": 900,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1300, "y": 800, "width": 220, "height": 200 }
+    },
+    
+    {
+      "id": "passage_10",
+      "x": 680, "y": 620,
+      "width": 20, "height": 100,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 600, "y": 600, "width": 100, "height": 100 }
+    },
+    {
+      "id": "passage_11",
+      "x": 600, "y": 700,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 600, "y": 600, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_12",
+      "x": 900, "y": 700,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 900, "y": 600, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_13",
+      "x": 1200, "y": 700,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1200, "y": 600, "width": 220, "height": 200 }
+    },
+
+    {
+      "id": "passage_14",
+      "x": 800, "y": 500,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 800, "y": 400, "width": 320, "height": 200 }
+    },
+    {
+      "id": "passage_15",
+      "x": 1100, "y": 500,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1100, "y": 400, "width": 220, "height": 200 }
+    },
+
+    {
+      "id": "passage_16",
+      "x": 1000, "y": 300,
+      "width": 20, "height": 100,
+      "countsAsSecret": false,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1000, "y": 200, "width": 220, "height": 200 }
+    },
+    {
+      "id": "passage_17",
+      "x": 1080, "y": 220,
+      "width": 20, "height": 100,
+      "countsAsSecret": true,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1000, "y": 200, "width": 100, "height": 100 }
+    }
+  ],
+
+  "switches": [
+    {
+      "id": "switch_1",
+      "x": 1050,
+      "y": 230,
+      "targets": ["secret_door_1"],
+      "hint": "Ganz tief unten in den Kasematten!!"
+    }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "secret_door_1",
+      "x": 1400,
+      "y": 1100,
+      "width": 40,
+      "height": 100
+    }
+  ],
+
+  "playerStart": { "x": 100, "y": 1100 }
+}

@@ -1,0 +1,208 @@
+{
+  "id": 9,
+  "worldId": "world1",
+  "name": "Der Garten",
+  "story": "Blumen, so schöne Blumen!",
+  "width": 1800,
+  "height": 1300,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1280, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1300 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1300 },
+
+    { "x": 0,    "y": 1200, "width": 1800, "height": 100 },
+
+    { "x": 20, "y": 200, "width": 200, "height": 20 },
+    { "x": 200, "y": 20, "width": 20, "height": 80 },
+
+    
+    { "x": 100, "y": 500, "width": 20, "height": 400 },            
+    { "x": 300, "y": 800, "width": 20, "height": 100 },
+    { "x": 200, "y": 700, "width": 20, "height": 100 },    
+
+    { "x": 120, "y": 680, "width": 100, "height": 20 },
+    { "x": 220, "y": 780, "width": 100, "height": 20 },
+    { "x": 120, "y": 880, "width": 180, "height": 20 },
+
+
+    { "x": 300, "y": 200, "width": 20, "height": 100 },
+    { "x": 300, "y": 300, "width": 100, "height": 20 },
+    { "x": 400, "y": 100, "width": 220, "height": 220, "type": "walls" },
+
+
+    { "x": 200, "y": 400, "width": 200, "height": 20 },
+    { "x": 200, "y": 420, "width": 20, "height": 100 },
+    { "x": 200, "y": 520, "width": 300, "height": 20 },
+    { "x": 500, "y": 400, "width": 220, "height": 220, "type": "walls" },
+
+
+    { "x": 400, "y": 700, "width": 300, "height": 20 },
+    { "x": 500, "y": 800, "width": 200, "height": 20 },
+    { "x": 400, "y": 900, "width": 500, "height": 20 },
+    { "x": 700, "y": 1100, "width": 500, "height": 20 },
+    { "x": 1000, "y": 1000, "width": 200, "height": 20 },
+
+    { "x": 400, "y": 720, "width": 20, "height": 200 },
+    { "x": 700, "y": 700, "width": 20, "height": 120 },
+    { "x": 700, "y": 920, "width": 20, "height": 180 },
+    { "x": 900, "y": 900, "width": 20, "height": 120 },
+    { "x": 1200, "y": 1000, "width": 20, "height": 120 },
+
+    
+    { "x": 800, "y": 20, "width": 20, "height": 100 },
+    { "x": 800, "y": 100, "width": 300, "height": 20 },
+
+
+    { "x": 820, "y": 200, "width": 400, "height": 20 },
+    { "x": 800, "y": 300, "width": 300, "height": 20 },
+    { "x": 1100, "y": 500, "width": 120, "height": 20 },
+
+    { "x": 800, "y": 200, "width": 20, "height": 100 },
+    { "x": 1200, "y": 220, "width": 20, "height": 280 },
+    { "x": 900, "y": 400, "width": 200, "height": 200, "type": "walls" },
+    
+    { "x": 1300, "y": 200, "width": 200, "height": 200, "type": "walls" },
+    { "x": 1300, "y": 600, "width": 200, "height": 200, "type": "walls" },
+
+
+    { "x": 1000, "y": 700, "width": 200, "height": 20 },
+    { "x": 1000, "y": 800, "width": 200, "height": 20 },
+    { "x": 1000, "y": 720, "width": 20, "height": 80 },
+
+
+    { "x": 1600, "y": 500, "width": 200, "height": 200, "type": "walls" },
+    { "x": 1600, "y": 700, "width": 20, "height": 300 },
+    { "x": 1700, "y": 800, "width": 20, "height": 200 },
+    { "x": 1600, "y": 1000, "width": 120, "height": 20 },
+
+    
+    { "x": 300, "y": 1000, "width": 200, "height": 200, "type": "walls" },
+
+    { "x": 1600, "y": 20, "width": 20, "height": 100 },
+    { "x": 1600, "y": 200, "width": 200, "height": 20 },
+
+    { "x": 1300, "y": 1000, "width": 200, "height": 20 },
+    { "x": 1300, "y": 1020, "width": 20, "height": 180 },
+    { "x": 1480, "y": 1020, "width": 20, "height":  80 }    
+  ],
+
+  "coins": [
+    { "x": 900,  "y": 70 },
+    { "x": 1050,  "y": 770 },
+    { "x": 1250, "y": 1170 }
+  ],
+
+  "key":  { "x": 625,  "y": 770 },
+  "door": { "x": 1520, "y": 1100, "width": 60, "height": 100 },
+  "goal": { "x": 1560, "y": 1140 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  600,
+      "patrolRight": 800,
+      "speed": 1.2,
+      "dialog": [
+        "Der Garten ist angelegt wie ein Labyrinth.",
+        "Schöne Blumen gibt es hier.",
+        "Hast du ein Geheimnis entdeckt?"
+      ]
+    }
+  ],
+
+  "passages": [
+    {
+      "id": "passage_1",
+      "x": 1600, "y": 100,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1600, "y": 20, "width": 200, "height": 200 }
+    },
+    {
+      "id": "passage_2",
+      "x": 880, "y": 1000,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 700, "y": 920, "width": 220, "height": 200 }
+    },
+    {
+      "id": "passage_3",
+      "x": 180, "y": 100,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 20, "y": 20, "width": 200, "height": 200 }
+    },
+    {
+      "id": "passage_4",
+      "x": 1480, "y": 1100,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1300, "y": 1020, "width": 200, "height": 200 }
+    }
+  ],
+
+  "switches": [
+    {
+      "id": "switch_1",
+      "x": 150,
+      "y": 630,
+      "targets": ["secret_door_1"],
+      "hint": "Ganz weit oben und weit weg... Die Tür ist wohl offen."
+    },
+    {
+      "id": "switch_2",
+      "x": 1740,
+      "y": 150,
+      "targets": ["secret_door_2"],
+      "hint": "Irgendwo unten... Aber nicht so weit weg."
+    },
+    {
+      "id": "switch_3",
+      "x": 750,
+      "y": 1050,
+      "targets": ["secret_door_3"],
+      "hint": "Wieder ganz oben... Auf der anderen Seite."
+    },
+    {
+      "id": "switch_4",
+      "x": 50,
+      "y": 150,
+      "targets": ["secret_door_4"],
+      "hint": "Das war der Letzte. Wo ist die Tür? Ich habe es fast nicht gehört."
+    }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "secret_door_1",
+      "x": 1600, "y": 100,
+      "width": 40,
+      "height": 100
+    },
+    {
+      "id": "secret_door_2",
+      "x": 880, "y": 1000,
+      "width": 40,
+      "height": 100
+    },
+    {
+      "id": "secret_door_3",
+      "x": 180, "y": 100,
+      "width": 40,
+      "height": 100
+    },
+    {
+      "id": "secret_door_4",
+      "x": 1460, "y": 1100,
+      "width": 40,
+      "height": 100
+    }
+  ],
+
+  "playerStart": { "x": 100, "y": 1100 }
+}
