@@ -1,0 +1,42 @@
+{
+  "id": 12,
+  "worldId": "world2",
+  "name": "Kleos Scheune",
+  "story": "In der Scheune gibt es viele Verstecke...",
+  "width": 1200,
+  "height": 2100,
+  "walls": [
+    {"x": 0, "y": 0, "width": 1200, "height": 20},
+    {"x": 0, "y": 2080, "width": 1200, "height": 20},
+    {"x": 0, "y": 0, "width": 20, "height": 2100},
+    {"x": 1180, "y": 0, "width": 20, "height": 2100},
+
+    {"x": 0, "y": 2000, "width": 1200, "height": 100},
+
+    {"x": 100,  "y": 1900, "width": 150, "height": 20},
+    {"x": 250,  "y": 1750, "width": 150, "height": 20},
+    {"x": 400,  "y": 1600, "width": 150, "height": 20},
+    {"x": 550,  "y": 1450, "width": 150, "height": 20},
+    {"x": 700, "y": 1300, "width": 150, "height": 20},
+    {"x": 850, "y": 1150, "width": 150, "height": 20},    
+
+    {"x": 700, "y": 1000, "width": 150, "height": 20},
+    {"x": 550, "y": 850, "width": 150, "height": 20},
+    {"x": 400, "y": 700, "width": 150, "height": 20},
+    {"x": 250, "y": 550, "width": 150, "height": 20},
+    {"x": 100, "y": 400, "width": 150, "height": 20},
+
+    {"x": 250, "y": 250, "width": 150, "height": 20},
+    {"x": 400, "y": 100, "width": 300, "height": 20}    
+  ],
+  "coins": [
+    {"x": 900, "y": 1970},
+    {"x": 925, "y": 1970},
+    {"x": 950, "y": 1970}
+  ],
+  "key": {"x": 1075, "y": 1970},
+  "door": {"x": 1050, "y": 1900, "width": 50, "height": 100},
+  "goal": {"x": 1150, "y": 1950},
+
+  "playerStart": {"x": 150, "y": 1900}
+}

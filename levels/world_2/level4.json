@@ -1,0 +1,110 @@
+{
+  "id": 14,
+  "worldId": "world2",
+  "name": "Gunnars Schmiede",
+  "story": "Der Schmied war ein schlauer Mann. Er hat irgendwas mit den Schaltern gemacht.",
+  "width": 1800,
+  "height": 1200,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1180, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1200 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1200 },
+
+    { "x": 0,    "y": 1100, "width": 1800, "height": 100 },
+
+    { "x": 400,    "y": 900, "width": 200, "height": 20 },
+    { "x": 800,    "y": 900, "width": 200, "height": 20 },
+    { "x": 1200,    "y": 900, "width": 200, "height": 20 },
+
+    { "x": 200,    "y": 700, "width": 200, "height": 20 },
+    { "x": 700,    "y": 700, "width": 400, "height": 20 },
+    { "x": 1400,    "y": 700, "width": 200, "height": 20 },
+
+    { "x": 750,    "y": 500, "width": 300, "height": 20 },
+    { "x": 750,    "y": 520, "width": 20, "height": 80 },
+    { "x": 1030,    "y": 520, "width": 20, "height": 80 }
+  ],
+
+  "coins": [
+    { "x": 290,  "y": 670 },
+    { "x": 890,  "y": 670 },
+    { "x": 1490, "y": 670 }
+  ],
+
+  "key":  { "x": 890,  "y": 470 },
+  "door": { "x": 1520, "y": 1000, "width": 60, "height": 100 },
+  "goal": { "x": 1560, "y": 1040 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  600,
+      "patrolRight": 800,
+      "speed": 1.2,
+      "dialog": [
+        "Der Schmied war clever!",
+        "Hier hat der Kämmerer wohl sein Schlatung her.",
+        "Es müssen wohl alle 3 angeschaltet sein."
+      ]
+    }
+  ],
+
+  "passages": [
+    {
+      "id": "passage_1",
+      "x": 750, "y": 500,
+      "width": 300, "height": 180,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 750, "y": 500, "width": 300, "height": 200 }
+    }
+  ],
+ 
+  "switches": [
+    { "id": "s1", "x": 490, "y": 840 },
+    { "id": "s2", "x": 890, "y": 840 },
+    { "id": "s3", "x": 1290, "y": 840 }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "puzzle_door_left",
+      "x": 730, "y": 600,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "puzzle_door_right",
+      "x": 1030, "y": 600,
+      "width": 40, "height": 100
+    }
+  ],
+
+  "puzzle": {
+    "type": "condition-logic",
+    "conditions": [
+      {
+        "when": "s1:on && s2:on && s3:off",
+        "then": {
+          "s1": "off",
+          "s2": "off",
+          "message": "Falsche Reihenfolge! Alle Schalter wurden zurückgesetzt."
+        }
+      },
+      {
+        "when": "s2:on && s3:on && s1:off",
+        "then": {
+         "s2": "off",
+          "s3": "off"
+        }
+      }
+    ],
+    "solvedWhen": "s1:on && s2:on && s3:on",
+    "onSolved": { "openDoors": ["puzzle_door_left","puzzle_door_right"] }
+  },
+
+  "playerStart": { "x": 100, "y": 1000 }
+}

@@ -1,0 +1,100 @@
+{
+  "id": 15,
+  "worldId": "world2",
+  "name": "Krämerladen",
+  "story": "Wieso sind hier so viele Schalter?",
+  "width": 1800,
+  "height": 1200,
+  
+  "walls": [
+    { "x": 0, "y": 0, "width": 1800, "height": 20 },
+    { "x": 0, "y": 1180, "width": 1800, "height": 20 },
+    { "x": 0, "y": 0, "width": 20, "height": 1200 },
+    { "x": 1780, "y": 0, "width": 20, "height": 1200 },
+
+    { "x": 0, "y": 1100, "width": 1800, "height": 100 },
+
+    { "x": 400, "y": 900, "width": 200, "height": 20 },
+    { "x": 800, "y": 900, "width": 200, "height": 20 },
+    { "x": 1200, "y": 900, "width": 200, "height": 20 },
+
+    { "x": 600, "y": 700, "width": 600, "height": 20 },
+    { "x": 200, "y": 500, "width": 200, "height": 20 },
+    { "x": 1400, "y": 500, "width": 200, "height": 20 }
+  ],
+
+  "coins": [
+    { "x": 350, "y": 470 },
+    { "x": 890, "y": 670 },
+    { "x": 1425, "y": 470 }
+  ],
+
+  "key":  { "x": 890,  "y": 1070 },
+  "door": { "x": 1520, "y": 1000, "width": 60, "height": 100 },
+  "goal": { "x": 1560, "y": 1040 },
+
+  "switches": [
+    { "id": "s1", "x": 450,  "y": 860 },
+    { "id": "s2", "x": 900,  "y": 860 },
+    { "id": "s3", "x": 1350, "y": 860 },
+    { "id": "s4", "x": 250,  "y": 460 },
+    { "id": "s5", "x": 1475, "y": 460 }
+  ],
+
+  "secretDoors": [
+    { "id": "door_s4", "x": 360, "y": 400, "width": 40, "height": 100 },
+    { "id": "door_s5", "x": 1400, "y": 400, "width": 40, "height": 100 },
+    { "id": "door_center", "x": 700, "y": 560, "width": 400, "height": 140 }
+  ],
+
+  "passages": [
+    {
+      "id": "hidden_center",
+      "x": 800,
+      "y": 580,
+      "width": 200, "height": 120,
+      "countsAsSecret": true,
+      "sniffHint": "Etwas verbirgt sich in der Mitte...",
+      "hiddenArea": { "x": 800, "y": 580, "width": 200, "height": 120 }
+    }
+  ],
+
+  "puzzle": {
+    "type": "condition-logic",
+    "conditions": [
+      {
+        "when": "s1:on && s2:on",
+        "then": { "door_s4": "open" }
+      },
+      {
+        "when": "s2:on && s3:on && s4:on",
+        "then": { "door_s5": "open" }
+      },
+      {
+        "when": "s1:on && s2:on && s3:on && s4:on && s5:on",
+        "then": { "door_center": "open", "message": "Alle Hebel korrekt! Der geheime Bereich öffnet sich." }
+      }      
+    ],
+    "solvedWhen": "s1:on && s2:on && s3:on && s4:on && s5:on",
+    "onSolved": { "openDoors": ["door_center"] }
+  },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 900,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  800,
+      "patrolRight": 1000,
+      "speed": 1.2,
+      "dialog": [
+        "Wieso hat der Kärmer auch so viele Schalter?",
+        "Hier musst du wophl ein bisschen hin und her rennen.",
+        "Erst liks und dann rechts... oder andersherum?"
+      ]
+    }
+  ],
+
+  "playerStart": { "x": 100, "y": 1000 }
+}

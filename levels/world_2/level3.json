@@ -1,0 +1,31 @@
+{
+  "id": 13,
+  "worldId": "world2",
+  "name": "Der Marktplatz",
+  "story": "Der Markt ist heute geschlossen...",
+  "width": 2200,
+  "height": 1200,
+  "walls": [
+    {"x": 0, "y": 0, "width": 2200, "height": 20},
+    {"x": 0, "y": 1180, "width": 2200, "height": 20},
+    {"x": 0, "y": 0, "width": 20, "height": 1200},
+    {"x": 2180, "y": 0, "width": 20, "height": 1200},
+    {"x": 200, "y": 1000, "width": 200, "height": 20},
+    {"x": 500, "y": 950, "width": 200, "height": 20},
+    {"x": 800, "y": 900, "width": 200, "height": 20},
+    {"x": 1100, "y": 850, "width": 200, "height": 20},
+    {"x": 1400, "y": 900, "width": 200, "height": 20},
+    {"x": 1700, "y": 950, "width": 200, "height": 20},
+    {"x": 2000, "y": 1000, "width": 150, "height": 20},
+    {"x": 0, "y": 1100, "width": 2200, "height": 100}
+  ],
+  "coins": [
+    {"x": 600, "y": 920},
+    {"x": 1200, "y": 820},
+    {"x": 1800, "y": 920}
+  ],
+  "key": {"x": 900, "y": 870},
+  "door": {"x": 2050, "y": 1000, "width": 50, "height": 200},
+  "goal": {"x": 2100, "y": 1050},
+  "playerStart": {"x": 100, "y": 1000}
+}
