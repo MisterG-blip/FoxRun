@@ -110,9 +110,7 @@ class Game {
   }
 
   setupInputHandlers() {
-    document.getElementById('restartButton').addEventListener('click', () => {
-      this.retryLevel();
-    });
+    // Restart button entfernt - Spieler kann Seite neu laden
   }
 
   // ========================================================================
@@ -185,10 +183,12 @@ class Game {
     // HUD aktualisieren
     this.updateHUD();
     
-    // Level-Info
+    // Level-Info (wegklickbar + verschwindet bei Bewegung)
+    this.storyDismissed = false;
+    this.playerStartX = levelData.playerStart.x;
     this.showMessage(
       `${world.name}<br>${levelData.name}<br><small>${levelData.story}</small>`,
-      3000
+      0  // kein Auto-Timeout
     );
     
     console.log(`✅ Level ${levelId} geladen!`);
@@ -419,10 +419,30 @@ class Game {
     const msg = document.getElementById('message');
     msg.classList.add('show');
     
+    // Click zum Wegklicken
+    const clickHandler = () => {
+      msg.classList.remove('show');
+      msg.removeEventListener('click', clickHandler);
+    };
+    msg.addEventListener('click', clickHandler);
+    
     if (duration > 0) {
       setTimeout(() => {
         msg.classList.remove('show');
+        msg.removeEventListener('click', clickHandler);
       }, duration);
+    }
+  }
+
+  // Prüft ob Story-Message noch angezeigt wird und Player sich bewegt hat
+  checkStoryDismiss() {
+    if (this.storyDismissed || !this.player || !this.playerStartX) return;
+    
+    const movedDistance = Math.abs(this.player.x - this.playerStartX);
+    if (movedDistance > 50) {  // 50 Pixel Bewegung
+      this.storyDismissed = true;
+      const msg = document.getElementById('message');
+      msg.classList.remove('show');
     }
   }
 
@@ -449,6 +469,7 @@ class Game {
     if (!this.player || !this.level) return;
     
     this.handleInput();
+    this.checkStoryDismiss();  // Story bei Bewegung ausblenden
     this.level.update();
     this.level.updateNpcs(deltaTime, this.player.x + 20, this.player.y);
     this.level.updateSwitches(this.player.x + 20, this.player.y);

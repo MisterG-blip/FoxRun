@@ -120,7 +120,14 @@ class ConditionPuzzle {
     let hadChanges = false;
 
     for (const [targetId, action] of Object.entries(thenObj)) {
-      // Schalter?
+      if (targetId === 'message') {
+        // Hier wird die Meldung ausgegeben, z.B. HUD, Tooltip oder Konsole
+        console.log(`💬 PUZZLE-MELDUNG: ${action}`);
+        if (this.onMessage) this.onMessage(action); // optional Callback
+        continue;
+      }
+            
+      // Schalter?   
       const sw = this.switchesById[targetId];
       if (sw) {
         const oldState = sw.isOn;
