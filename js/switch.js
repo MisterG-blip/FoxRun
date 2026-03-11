@@ -58,9 +58,11 @@ class Switch {
   // UPDATE
   // ==========================================================================
   update(playerX, playerY) {
-    const dist      = Math.abs(playerX - (this.x + this.width / 2));
-    this.playerNearby = dist < SWITCH_INTERACT_DISTANCE;
-
+    const dx = playerX - this.x;
+    const dy = playerY - this.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);  // Echte Distanz
+    this.playerNearby = (dist < SWITCH_INTERACT_DISTANCE);
+  
     // Sanfte Animation zwischen den Zuständen
     const target = this.isOn ? 1 : 0;
     this.animProgress += (target - this.animProgress) * 0.2;
