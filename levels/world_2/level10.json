@@ -52,8 +52,8 @@
       "speed": 1.2,
       "dialog": [
         "Das Rätsel hat wohl drei Stufen.",
-        "Du musst wohl alles nach einander machen.",
-        "Die oberen Schlter hängen wohl mit den unteren Schaltern zusammen."
+        "Es müssen wohl immer 3 Schalter an sein.",
+        "Nur der letzte ist anders."
       ]
     }
   ],
@@ -193,20 +193,8 @@
           "s4" : "off",
           "s5" : "off"
         }
-      },
-      {
-        "when": "!h1:off && !h2:off && !h3:off && (s1:on || s3:on || s5:on )",
-        "then": {          
-          "s1": "off",
-          "s2": "off",
-          "s3": "off",
-          "s4": "off",
-          "s5": "off"
-        }
-      }
-    ],
-    "solvedWhen": "s1:on && s2:on && s3:on",
-    "onSolved": { "openDoors": ["puzzle_door_left","puzzle_door_right"] }
+      }      
+    ]    
   },
 
   "playerStart": { "x": 100, "y": 1000 }
