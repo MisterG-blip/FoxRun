@@ -1,0 +1,213 @@
+{
+  "id": 20,
+  "worldId": "world2",
+  "name": "Das Haus des Dorfschulzen",
+  "story": "Hat der Schulze sich vom Schmied und Kesselflicker beraten lassen?",
+  "width": 1800,
+  "height": 1200,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1180, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1200 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1200 },
+
+    { "x": 0,    "y": 1100, "width": 1800, "height": 100 },
+
+    { "x": 200,    "y": 900, "width": 200, "height": 20 },
+    { "x": 500,    "y": 900, "width": 200, "height": 20 },
+    { "x": 800,    "y": 900, "width": 200, "height": 20 },
+    { "x": 1100,   "y": 900, "width": 200, "height": 20 },
+    { "x": 1400,   "y": 900, "width": 200, "height": 20 },
+
+    { "x": 20,    "y": 700, "width": 200, "height": 20 },
+    { "x": 700,    "y": 700, "width": 400, "height": 20 },
+    { "x": 1600,    "y": 700, "width": 200, "height": 20 },
+
+    { "x": 750,    "y": 500, "width": 300, "height": 20 },
+    { "x": 750,    "y": 520, "width": 20, "height": 80 },
+    { "x": 1030,   "y": 520, "width": 20, "height": 80 },
+
+    { "x": 500,    "y": 300, "width": 800, "height": 5 }
+  ],
+
+  "coins": [
+    { "x":   90, "y": 670 },
+    { "x":  890, "y": 670 },
+    { "x": 1720, "y": 670 }
+  ],
+
+  "key":  { "x": 890,  "y": 470 },
+  "door": { "x": 1520, "y": 1000, "width": 60, "height": 100 },
+  "goal": { "x": 1560, "y": 1040 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  600,
+      "patrolRight": 800,
+      "speed": 1.2,
+      "dialog": [
+        "Das Rätsel hat wohl drei Stufen.",
+        "Du musst wohl alles nach einander machen.",
+        "Die oberen Schlter hängen wohl mit den unteren Schaltern zusammen."
+      ]
+    }
+  ],
+
+  "passages": [
+    {
+      "id": "passage_1",
+      "x": 750, "y": 500,
+      "width": 300, "height": 180,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 750, "y": 500, "width": 300, "height": 200 }
+    }
+  ],
+ 
+  "switches": [
+    { "id": "s1", "x": 290, "y": 840 },
+    { "id": "s2", "x": 590, "y": 840 },
+    { "id": "s3", "x": 890, "y": 840 },
+    { "id": "s4", "x": 1190, "y": 840 },
+    { "id": "s5", "x": 1490, "y": 840 },
+
+    { "id": "h1", "x": 800, "y": 200 },
+    { "id": "h2", "x": 890, "y": 200 },
+    { "id": "h3", "x": 980, "y": 200 }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "door_l",
+      "x": 180, "y": 600,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door_m1",
+      "x": 730, "y": 600,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door_m",
+      "x": 880, "y": 600,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door_m2",
+      "x": 1030, "y": 600,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door_r",
+      "x": 1600, "y": 600,
+      "width": 40, "height": 100
+    }
+  ],
+
+  "puzzle": {
+    "type": "condition-logic",
+    "conditions": [
+      {
+        "when": "h1:off && h2:off && h3:off && s1:on && s2:on && !s3:on && s4:on && !s5:on",
+        "then": {
+          "door_r" : "open",
+          "h1" : "on",
+          "s1" : "off",
+          "s2" : "off",
+          "s3" : "off",
+          "s4" : "off",
+          "s5" : "off"
+        }
+      },
+      {
+        "when": "h1:off && h2:off && h3:off && (s3:on || s5:on )",
+        "then": {          
+          "s1" : "off",
+          "s2" : "off",
+          "s3" : "off",
+          "s4" : "off",
+          "s5" : "off"
+        }
+      },
+      {
+        "when": "!h1:off && h2:off && h3:off && !s1:on && s2:on && !s3:on && s4:on && s5:on",
+        "then": {
+          "door_l" : "open",
+          "h2" : "on",
+          "s1" : "off",
+          "s2" : "off",
+          "s3" : "off",
+          "s4" : "off",
+          "s5" : "off"
+        }
+      },
+      {
+        "when": "!h1:off && h2:off && h3:off && (s1:on || s3:on )",
+        "then": {          
+          "s1" : "off",
+          "s2" : "off",
+          "s3" : "off",
+          "s4" : "off",
+          "s5" : "off"
+        }
+      },
+      {
+        "when": "!h1:off && !h2:off && h3:off && s1:on && !s2:on && s3:on && !s4:on && s5:on",
+        "then": {
+          "door_m1" : "open",
+          "door_m2" : "open",
+          "h3" : "on",
+          "s1" : "off",
+          "s2" : "off",
+          "s3" : "off",
+          "s4" : "off",
+          "s5" : "off"
+        }
+      },
+      {
+        "when": "!h1:off && !h2:off && h3:off && (s2:on || s4:on )",
+        "then": {          
+          "s1" : "off",
+          "s2" : "off",
+          "s3" : "off",
+          "s4" : "off",
+          "s5" : "off"
+        }
+      },
+      {
+        "when": "!h1:off && !h2:off && !h3:off && !s1:on && s2:on && !s3:on && s4:on && !s5:on",
+        "then": {
+          "door_m" : "open"
+        }
+      },
+      {
+        "when": "!h1:off && !h2:off && !h3:off && (s1:on || s3:on || s5:on )",
+        "then": {          
+          "s1" : "off",
+          "s2" : "off",
+          "s3" : "off",
+          "s4" : "off",
+          "s5" : "off"
+        }
+      },
+      {
+        "when": "!h1:off && !h2:off && !h3:off && (s1:on || s3:on || s5:on )",
+        "then": {          
+          "s1": "off",
+          "s2": "off",
+          "s3": "off",
+          "s4": "off",
+          "s5": "off"
+        }
+      }
+    ],
+    "solvedWhen": "s1:on && s2:on && s3:on",
+    "onSolved": { "openDoors": ["puzzle_door_left","puzzle_door_right"] }
+  },
+
+  "playerStart": { "x": 100, "y": 1000 }
+}

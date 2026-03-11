@@ -1,0 +1,72 @@
+{
+  "id": 17,
+  "worldId": "world2",
+  "name": "Der ausgetrockente Weiher",
+  "story": "Im Weiher ist gar kein Wasser mehr. Jemand sollte hier auffüllen.",
+  "width": 1800,
+  "height": 1200,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1180, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1200 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1200 },
+
+    { "x": 0,      "y":  950, "width": 200, "height": 150 },
+    { "x": 200,    "y": 1000, "width": 200, "height": 100 },
+    { "x": 400,    "y": 1050, "width": 200, "height":  50 },
+    { "x": 600,    "y": 1100, "width": 200, "height": 100 },
+
+    { "x": 1000,    "y": 1110, "width": 200, "height": 100 },
+    { "x": 1200,    "y": 1050, "width": 200, "height": 100 },
+    { "x": 1400,    "y": 1000, "width": 200, "height": 100 },
+    { "x": 1600,    "y":  950, "width": 200, "height": 100 },
+
+    { "x": 400,    "y": 500, "width": 200, "height": 20 },
+    { "x": 800,    "y": 500, "width": 200, "height": 20 },
+    { "x": 1200,   "y": 500, "width": 200, "height": 20 },
+
+    { "x": 200,    "y": 700, "width": 200, "height": 20 },
+    { "x": 1400,    "y": 700, "width": 200, "height": 20 },
+
+    { "x": 700,    "y": 1040, "width": 400, "height": 20 }
+  ],
+
+  "coins": [
+    { "x": 290,  "y": 670 },
+    { "x": 890,  "y": 470 },
+    { "x": 1490, "y": 670 }
+  ],
+
+  "key":  { "x": 890,  "y": 1120 },
+  "door": { "x": 1620, "y": 850, "width": 60, "height": 100 },
+  "goal": { "x": 1660, "y": 900},
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 700,
+      "y": 1000,
+      "behavior": "patrol",
+      "patrolLeft":  700,
+      "patrolRight": 1050,
+      "speed": 1.2,
+      "dialog": [
+        "Alle Staubtrocken, ich glaube hier gibt es nichts weiter.",
+        "Ich habe Durst. Wir sollten langsam weiter zum Wald.",
+        "Im Wald gibt es einen Bach neben der Lichtung."
+      ]
+    }
+  ], 
+  "passages": [
+    {
+      "id": "passage_1",
+      "x": 750, "y": 1060,
+      "width": 300, "height": 50,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 800, "y": 1100, "width": 200, "height": 100 }
+    }
+  ],
+ 
+  "playerStart": { "x": 100, "y": 850 }
+}

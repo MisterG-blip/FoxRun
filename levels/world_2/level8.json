@@ -1,0 +1,307 @@
+{
+  "id": 18,
+  "worldId": "world2",
+  "name": "Korn Speicher",
+  "story": "Hier gibt es bestimmt Mäuse, so wie in der Speisekammer.",
+  "width": 1800,
+  "height": 1200,
+
+  "walls": [
+    { "x": 0,    "y": 0,    "width": 1800, "height": 20 },
+    { "x": 0,    "y": 1180, "width": 1800, "height": 20 },
+    { "x": 0,    "y": 0,    "width": 20,   "height": 1200 },
+    { "x": 1780, "y": 0,    "width": 20,   "height": 1200 },
+
+    { "x": 300,    "y": 220, "width": 100, "height": 20 },
+    { "x": 100,    "y": 400, "width": 100, "height": 20 },
+    { "x": 200,    "y": 600, "width": 100, "height": 20 },
+    { "x": 300,    "y": 800, "width": 400, "height": 20 },
+
+    { "x": 400,    "y": 200, "width": 100, "height": 20 },
+    { "x": 500,    "y": 250, "width": 100, "height": 20 },
+    { "x": 600,    "y": 300, "width": 100, "height": 20 },
+    { "x": 700,    "y": 350, "width": 100, "height": 20 },
+
+    { "x": 800,    "y": 200, "width": 100, "height": 20 },
+    { "x": 700,    "y": 220, "width": 100, "height": 20 },
+    { "x": 900,    "y": 250, "width": 100, "height": 20 },
+    { "x": 1000,   "y": 300, "width": 100, "height": 20 },
+    { "x": 1100,   "y": 350, "width": 100, "height": 20 },
+
+    { "x": 1200,    "y": 200, "width": 100, "height": 20 },
+    { "x": 1100,    "y": 220, "width": 100, "height": 20 },
+    { "x": 1300,    "y": 250, "width": 100, "height": 20 },
+    { "x": 1400,    "y": 300, "width": 100, "height": 20 },
+    { "x": 1500,    "y": 350, "width": 100, "height": 20 },
+
+    { "x": 400,    "y": 220, "width": 20, "height": 545 },
+    { "x": 400,    "y": 820, "width": 20, "height": 180 },
+    
+    { "x": 480,    "y": 220, "width": 20, "height":  50 },
+    { "x": 580,    "y": 270, "width": 20, "height":  50 },
+    { "x": 680,    "y": 320, "width": 20, "height":  50 },
+
+    { "x": 800,    "y": 220, "width": 20, "height": 245 },
+    { "x": 880,    "y": 220, "width": 20, "height":  50 },
+    { "x": 980,    "y": 270, "width": 20, "height":  50 },
+    { "x": 1080,   "y": 320, "width": 20, "height":  50 },
+
+    { "x": 1200,    "y": 220, "width": 20, "height": 780 },
+    { "x": 1280,    "y": 220, "width": 20, "height":  50 },
+    { "x": 1380,    "y": 270, "width": 20, "height":  50 },
+    { "x": 1480,    "y": 320, "width": 20, "height":  50 },
+    { "x": 1580,    "y": 370, "width": 20, "height":  80 },
+    { "x": 1580,    "y": 500, "width": 20, "height": 600 },
+
+    { "x": 200,    "y": 1000, "width": 720, "height":  20 },
+    { "x": 1000,   "y": 1000, "width": 520, "height":  20 },
+    { "x": 400,    "y": 1055, "width": 600, "height":  10 },
+
+    { "x": 200,    "y": 1020, "width": 20, "height":  80 },
+    { "x": 300,    "y": 1020, "width": 20, "height":  45 },
+    { "x": 1000,   "y": 1020, "width": 20, "height":  45 },
+
+    { "x": 800,    "y": 800, "width": 420, "height":  20 },
+    { "x": 1300,   "y": 800, "width": 300, "height":  20 },
+    { "x": 500,    "y": 900, "width": 320, "height":  20 },
+    { "x": 900,    "y": 900, "width": 200, "height":  20 },
+
+    { "x": 800,    "y": 820, "width": 20, "height":  80 },
+    { "x": 900,    "y": 920, "width": 20, "height":  80 },
+    { "x": 1300,   "y": 820, "width": 20, "height":  80 },
+    { "x": 1400,   "y": 900, "width": 20, "height": 100 },
+    { "x": 1500,   "y": 820, "width": 20, "height":  80 },
+
+    { "x": 1200,   "y": 700, "width": 300, "height":  20 },
+    { "x": 400,    "y": 600, "width": 600, "height":  20 },
+    { "x": 500,    "y": 500, "width": 700, "height":  20 },
+    { "x": 1500,   "y": 500, "width": 100, "height":  20 },
+    { "x": 1200,   "y": 680, "width": 100, "height":  20 },
+    { "x": 1300,   "y": 400, "width": 300, "height":  20 },
+
+    { "x": 1300,   "y": 420, "width": 20, "height":  180 },
+    { "x": 1400,   "y": 500, "width": 20, "height":  200 },
+
+    { "x": 0,    "y": 1100, "width": 1800, "height": 100 }
+  ],
+
+  "coins": [
+    { "x": 250,  "y": 1070 },
+    { "x": 820,  "y": 170 },
+    { "x": 1430, "y": 370 }
+  ],
+
+  "key":  { "x": 620,  "y": 470 },
+  "door": { "x": 1620, "y": 1000, "width": 60, "height": 100 },
+  "goal": { "x": 1660, "y": 1040 },
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  600,
+      "patrolRight": 800,
+      "speed": 1.2,
+      "dialog": [
+        "Die Mäuse haben bestimmt Gänge gegraben.",
+        "Riech mal! Da ist doch was versteckt!",
+        "Ich glaube ich habe ein Rascheln gehört."
+      ]
+    }
+  ],
+
+  "passages": [
+    {
+      "id": "passage_1",
+      "x": 400, "y": 700,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 400, "y": 600, "width": 800, "height": 200 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_2",
+      "x": 1000, "y": 600,
+      "width": 200, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 400, "y": 500, "width": 800, "height": 100 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_3",
+      "x": 400, "y": 500,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 400, "y": 200, "width": 100, "height": 300 },
+      "countsAsSecret": true
+    },
+    {
+      "id": "passage_3a",
+      "x": 400, "y": 500,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 500, "y": 250, "width": 100, "height": 250 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_3b",
+      "x": 400, "y": 500,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 600, "y": 300, "width": 100, "height": 200 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_3c",
+      "x": 400, "y": 500,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 700, "y": 350, "width": 100, "height": 150 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_4",
+      "x": 800, "y": 400,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 800, "y": 200, "width": 100, "height": 300 }
+    },
+    {
+      "id": "passage_4a",
+      "x": 800, "y": 400,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 900, "y": 250, "width": 100, "height": 250 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_4b",
+      "x": 800, "y": 400,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1000, "y": 300, "width": 100, "height": 200 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_4c",
+      "x": 800, "y": 400,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1100, "y": 350, "width": 100, "height": 150 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_5",
+      "x": 1200, "y": 400,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1200, "y": 200, "width": 100, "height": 200 }
+    },
+    {
+      "id": "passage_5a",
+      "x": 1200, "y": 400,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1300, "y": 250, "width": 100, "height": 150 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_5b",
+      "x": 1200, "y": 400,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1400, "y": 300, "width": 100, "height": 100 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_5c",
+      "x": 1200, "y": 400,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1500, "y": 350, "width": 100, "height": 50 },
+      "countsAsSecret": false
+    },
+{
+      "id": "passage_6",
+      "x": 700, "y": 800,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 400, "y": 800, "width": 400, "height": 100 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_7",
+      "x": 400, "y": 900,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 400, "y": 900, "width": 500, "height": 100 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_8",
+      "x": 800, "y": 900,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 800, "y": 800, "width": 400, "height": 100 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_9",
+      "x": 1100, "y": 900,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 900, "y": 900, "width": 300, "height": 100 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_10",
+      "x": 900, "y": 1000,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 300, "y": 1000, "width": 1400, "height": 100 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_11",
+      "x": 300, "y": 1050,
+      "width": 20, "height": 100,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 200, "y": 1000, "width": 120, "height": 100 },
+      "countsAsSecret": true
+    },
+    {
+      "id": "passage_12",
+      "x": 1500, "y": 1000,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1200, "y": 800, "width": 400, "height": 200 },
+      "countsAsSecret": false
+    },
+    {
+      "id": "passage_13",
+      "x": 1200, "y": 800,
+      "width": 100, "height": 20,
+      "sniffHint": "Du riechst etwas Seltsames... als ob da etwas verborgen wäre.",
+      "hiddenArea": { "x": 1200, "y": 400, "width": 300, "height": 400 },
+      "countsAsSecret": false
+    }
+  ],
+ 
+  "switches": [
+    { "id": "s1", "x": 1140, "y": 450,
+    "targets": ["door1"]    
+   }      
+  ],
+
+  "secretDoors": [
+    {
+      "id": "door1",
+      "x": 700, "y": 800,
+      "width": 100, "height": 20
+    }
+  ],  
+
+  "playerStart": { "x": 100, "y": 1000 }
+}
