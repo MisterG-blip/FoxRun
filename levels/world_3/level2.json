@@ -1,0 +1,111 @@
+{
+  "id": 22,
+  "worldId": "world3",
+  "name": "Zwischen den Bäumen",
+  "story": "Die Bäume werden dichter...",
+  "width": 2500,
+  "height": 1200,
+  "walls": [
+    {"x": 0, "y": 0, "width": 2500, "height": 20},
+    {"x": 0, "y": 1180, "width": 2500, "height": 20},
+    {"x": 0, "y": 0, "width": 20, "height": 1200},
+    {"x": 2480, "y": 0, "width": 20, "height": 1200},
+
+    {"x": 400, "y": 1000, "width": 300, "height": 20},
+    {"x": 1000, "y": 1000, "width": 300, "height": 20},
+
+    {"x": 0, "y": 1100, "width": 2500, "height": 100}
+  ],
+  "coins": [
+    {"x": 500, "y": 1070},
+    {"x": 1080, "y": 1070},
+    {"x": 1850, "y": 1070}
+  ],
+
+  "key": {"x": 1150, "y": 970},
+  "door": {"x": 2390, "y": 1000, "width": 50, "height": 100},
+  "goal": {"x": 2440, "y": 1050},
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  700,
+      "patrolRight": 900,
+      "speed": 1.2,
+      "dialog": [
+        "Der Jäger müsste auch hier gewesen sein.",
+        "Die Fallen von ihm waren früher einfach. Man konnte sie einfach wieder öffnen.",
+        "Hast dich auch eingesperrt?"
+      ]
+    }
+  ],
+
+  "switches": [
+    { "id": "s1", "x": 540, "y": 1040 },
+    { "id": "s2", "x": 1140, "y": 1040 }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "door1",
+      "x": 400, "y": 1000,
+      "width": 40, "height": 100,
+      "initialState": "open"
+    },
+    {
+      "id": "door2",
+      "x": 660, "y": 1000,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door3",
+      "x": 1000, "y": 1000,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door4",
+      "x": 1260, "y": 1000,
+      "width": 40, "height": 100,
+      "initialState": "open"
+    }
+  ],
+  
+  "puzzle": {
+    "type": "condition-logic",
+    "conditions": [
+      {
+        "when": "s1:off",
+        "then": {
+          "door1" : "open",
+          "door2" : "close"
+        }
+      },
+      {
+        "when": "!s1:off",
+        "then": {
+          "door1" : "close",
+          "door2" : "open"
+        }
+      },
+      {
+        "when": "s2:off",
+        "then": {
+          "door4" : "open",
+          "door3" : "close"
+        }
+      },
+      {
+        "when": "!s2:off",
+        "then": {
+          "door4" : "close",
+          "door3" : "open"
+        }
+      }
+    ]
+  },  
+
+  "playerStart": {"x": 150, "y": 1000}
+}

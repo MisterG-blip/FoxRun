@@ -1,0 +1,183 @@
+{
+  "id": 25,
+  "worldId": "world3",
+  "name": "Der alte Hohlweg",
+  "story": "Tief im Wald... ist er hier?",
+  "width": 2500,
+  "height": 1200,
+  "walls": [
+    {"x": 0, "y": 0, "width": 2500, "height": 20},
+    {"x": 0, "y": 1180, "width": 2500, "height": 20},
+    {"x": 0, "y": 0, "width": 20, "height": 1200},
+    {"x": 2480, "y": 0, "width": 20, "height": 1200},
+
+    {"x": 400,  "y": 1000, "width": 1500, "height": 20},
+    {"x": 800,  "y":  900, "width": 1100, "height": 20},    
+    {"x": 1200, "y":  800, "width":  700, "height": 20},
+
+    {"x": 0, "y": 1100, "width": 2500, "height": 100}
+  ],
+  "coins": [
+    {"x": 1180, "y": 970},
+    {"x": 1680, "y": 870},
+    {"x": 1680, "y": 770}
+  ],
+
+  "key": {"x": 1150, "y":  1070},
+  "door": {"x": 2390, "y": 1000, "width": 50, "height": 100},
+  "goal": {"x": 2440, "y": 1050},
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  700,
+      "patrolRight": 900,
+      "speed": 1.2,
+      "dialog": [
+        "In den Holwegen kannst du dich ganz schnell einschlißen.",
+        "Ein Schalter öffent fast alle Türen.",
+        "Manchmal ist es besser den Schalter nur ein mal zu benutzen."
+      ]
+    }
+  ],
+
+  "switches": [
+    { "id": "s1", "x":  540, "y": 1040 },
+    { "id": "s2", "x":  940, "y":  940 },
+    { "id": "s3", "x": 1340, "y":  840 },
+    { "id": "s4", "x": 1010, "y": 1040 },
+    { "id": "s5", "x": 1410, "y":  940 },
+    { "id": "s6", "x": 1810, "y":  840 }
+  ],
+
+  "secretDoors": [
+    {
+      "id": "door1",
+      "x": 660, "y": 1000,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door2",
+      "x": 1860, "y": 1000,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door3",
+      "x": 1060, "y": 900,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door4",
+      "x": 1860, "y": 900,
+      "width": 40, "height": 100    
+    },
+    {
+      "id": "door5",
+      "x": 1460, "y": 800,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door6",
+      "x": 1860, "y": 800,
+      "width": 40, "height": 100
+    },
+    {
+      "id": "door7",
+      "x": 1200, "y": 600,
+      "width": 80, "height": 200
+    },
+     {
+      "id": "door8",
+      "x": 1820, "y": 600,
+      "width": 80, "height": 200,
+      "initialState": "open"
+    }
+  ],
+  
+  "puzzle": {
+    "type": "condition-logic",
+    "conditions": [
+      {
+        "when": "s1:on",
+        "then": {
+          "door1" : "open"
+        }
+      },
+      {
+        "when": "s1:off",
+        "then": {
+          "door1" : "close",
+          "door2" : "close",
+          "door3" : "close",
+          "door4" : "close",
+          "door5" : "close",
+          "door6" : "close",
+          "s4" : "off"
+        }
+      },
+      {
+        "when": "s2:on",
+        "then": {
+          "door3" : "open"
+        }
+      },
+      {
+        "when": "s2:off",
+        "then": {
+          "door3" : "close"          
+        }
+      },
+      {
+        "when": "s3:on",
+        "then": {
+          "door5" : "open",
+          "s4" : "off"
+        }
+      },
+      {
+        "when": "s3:off",
+        "then": {
+          "door5" : "close"
+        }
+      },
+      {
+        "when": "s4:on",
+        "then": {
+          "door2" : "open",
+          "door3" : "open",
+          "door5" : "open"
+        }
+      },
+      {
+        "when": "s5:on",
+        "then": {
+          "door3" : "close",
+          "door4" : "open",          
+          "door5" : "close",
+          "door8":"close",
+          "s1": "off"
+        }
+      },
+      {
+        "when": "s6:on",
+        "then": {
+          "door5" : "close",
+          "door6" : "open",          
+          "door8" : "close"      
+        }
+      },
+      {
+        "when": "s6:on && s4:on",
+        "then": {
+          "door2" : "close",
+          "door8" : "open"         
+        }
+      }
+    ]
+  },  
+
+  "playerStart": {"x": 150, "y": 1000}
+}
