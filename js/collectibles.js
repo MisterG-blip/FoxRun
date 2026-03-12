@@ -257,8 +257,11 @@ class SecretDoor {
     this.width        = data.width  || 40;
     this.height       = data.height || 100;
     this.theme        = theme;
-    this.isOpen       = false;
-    this.openProgress = 0;
+    
+    // Initial State Support
+    const initialState = data.initialState || 'closed';
+    this.isOpen       = (initialState === 'open');
+    this.openProgress = this.isOpen ? 1 : 0;
     
     // Multi-Switch Puzzle: Tür öffnet nur wenn ALLE Schalter an sind
     this.requiresAll  = data.requiresAll || null;  // ["switch_1", "switch_2", ...]
