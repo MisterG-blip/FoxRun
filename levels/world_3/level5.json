@@ -33,13 +33,13 @@
       "x": 650,
       "y": 860,
       "behavior": "patrol",
-      "patrolLeft":  700,
-      "patrolRight": 900,
+      "patrolLeft":  500,
+      "patrolRight": 800,
       "speed": 1.2,
       "dialog": [
-        "In den Holwegen kannst du dich ganz schnell einschlißen.",
+        "In den Holwegen kannst du dich ganz schnell einschließen.",
         "Ein Schalter öffent fast alle Türen.",
-        "Manchmal ist es besser den Schalter nur ein mal zu benutzen."
+        "Manchmal ist es besser den Schalter nur ein mal zu benutzen. Andere gar nicht!"
       ]
     }
   ],
