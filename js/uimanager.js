@@ -156,6 +156,14 @@ class UIManager {
     const resultScreen = document.getElementById('resultScreen');
     const totalInLevel = levelData.coins?.length || 3;
 
+    // Falls totalCoins nicht übergeben wurde, berechne es aus saveData
+    if (totalCoins === 0) {
+      const saveData = this.game.saveSystem.load();
+      Object.values(saveData.levelProgress).forEach(progress => {
+        totalCoins += progress.coins || 0;
+      });
+    }
+
     document.getElementById('resultTitle').textContent = `${levelData.name} — Geschafft!`;
     document.getElementById('resultCoins').textContent = coins;
     document.getElementById('resultTotalCoins').textContent = totalInLevel;
@@ -342,7 +350,13 @@ class UIManager {
 
   showFilterOverlay() {
     const saveData   = this.game.saveSystem.load();
-    const total      = saveData.totalCoins || 0;
+    
+    // Berechne totalCoins aus levelProgress (nicht aus gespeichertem Wert!)
+    let total = 0;
+    Object.values(saveData.levelProgress).forEach(progress => {
+      total += progress.coins || 0;
+    });
+    
     const unlocked   = COIN_FILTERS.filter(f => total >= f.threshold);
     const activeId   = saveData.activeFilter;
 

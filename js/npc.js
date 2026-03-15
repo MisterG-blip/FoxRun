@@ -160,7 +160,9 @@ class NPC {
     }
 
     // ── Spieler-Nähe prüfen ──────────────────────────────────────────────────
-    const dist = Math.abs(playerX - (this.x + this.drawWidth / 2));
+    const dx = playerX - (this.x + this.drawWidth / 2);
+    const dy = playerY - (this.y + this.drawHeight / 2);
+    const dist = Math.sqrt(dx * dx + dy * dy);
     this.playerNearby     = dist < NPC_INTERACT_DISTANCE;
     this.showInteractHint = this.playerNearby && this.dialog.length > 0;
 
