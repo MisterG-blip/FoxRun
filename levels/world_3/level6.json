@@ -1,0 +1,60 @@
+{
+  "id": 26,
+  "worldId": "world3",
+  "name": "Die großen Steine",
+  "story": "Tief im Wald... ist er hier?",
+  "width": 2500,
+  "height": 1200,
+  "walls": [
+    {"x": 0, "y": 0, "width": 2500, "height": 20},
+    {"x": 0, "y": 1180, "width": 2500, "height": 20},
+    {"x": 0, "y": 0, "width": 20, "height": 1200},
+    {"x": 2480, "y": 0, "width": 20, "height": 1200},
+
+    {"x": 600, "y":  900, "width": 400, "height": 100, "type": "wall"},
+    {"x": 700, "y": 1000, "width": 100, "height":  65, "type": "wall"},
+    {"x": 700, "y":  800, "width": 200, "height": 100, "type": "wall"},
+    {"x": 800, "y":  700, "width": 100, "height": 100, "type": "wall"},
+    {"x": 1000, "y": 1000, "width": 1000, "height": 100, "type": "wall"},
+
+    {"x": 1000, "y":  420, "width": 100, "height": 430, "type": "wall"},
+    {"x": 1100, "y":  570, "width": 100, "height": 300, "type": "wall"},
+    {"x": 1200, "y":  850, "width": 300, "height": 150, "type": "wall"},
+    {"x": 800, "y":  700,  "width": 100, "height": 100, "type": "wall"},
+
+    {"x": 1200, "y":  500, "width": 200, "height": 20, "type": "wall"},
+    {"x": 1400, "y":  500, "width": 40, "height": 100, "type": "wall"},
+    {"x": 1400, "y":  600, "width": 100, "height": 250, "type": "wall"},
+    {"x": 1755, "y":  755, "width": 158, "height": 250, "type": "wall"},
+
+    {"x": 0, "y": 1100, "width": 2500, "height": 100}
+  ],
+  "coins": [
+    {"x": 930, "y": 1070},
+    {"x": 1090, "y": 970},
+    {"x": 1290, "y": 810}
+  ],
+
+  "key": {"x": 1040, "y": 370},
+  "door": {"x": 2390, "y": 1000, "width": 50, "height": 100},
+  "goal": {"x": 2440, "y": 1050},
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  700,
+      "patrolRight": 900,
+      "speed": 1.2,
+      "dialog": [
+        "Was für ein Felsen.",
+        "Pass auf die Ritzen auf.",
+        "Ob was unter dem Stein auch etwas gibt?"
+      ]
+    }
+  ],  
+
+  "playerStart": {"x": 150, "y": 1000}
+}

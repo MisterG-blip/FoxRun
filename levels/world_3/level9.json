@@ -1,0 +1,120 @@
+{
+  "id": 29,
+  "worldId": "world3",
+  "name": "Das Waldherz",
+  "story": "Tief im Wald... ist er hier?",
+  "width": 2500,
+  "height": 1200,
+  "walls": [
+    {"x": 0, "y": 0, "width": 2500, "height": 20},
+    {"x": 0, "y": 1180, "width": 2500, "height": 20},
+    {"x": 0, "y": 0, "width": 20, "height": 1200},
+    {"x": 2480, "y": 0, "width": 20, "height": 1200},
+
+    {"x": 335,  "y": 100, "width": 12, "height": 350},
+    {"x": 334,  "y": 500, "width": 16, "height": 241},
+    {"x": 333,  "y": 791, "width": 23, "height": 250},
+    {"x": 834,  "y": 250, "width": 15, "height": 200},
+    {"x": 832,  "y": 600, "width": 26, "height": 450},
+    {"x": 1500, "y": 400, "width": 26, "height": 650},
+    {"x": 2000, "y": 600, "width": 21, "height": 450},
+
+    {"x": 1003, "y": 200, "width": 12, "height": 200},
+    {"x": 1233, "y": 20,  "width": 18, "height": 330},
+    {"x": 1530, "y": 150, "width": 17, "height": 250},
+    {"x": 1750, "y": 250, "width": 11, "height": 150},
+    {"x": 2000, "y": 20,  "width": 16, "height": 180},
+    {"x": 2250, "y": 200, "width": 15, "height": 200},
+
+    {"x": 40,   "y":  50, "width": 161, "height":  8},
+    {"x": 166,  "y": 270, "width": 116, "height":  9},
+    {"x": 166,  "y": 410, "width": 178, "height": 11},
+    {"x": 80 ,  "y": 555, "width": 239, "height": 10},
+    {"x": 26,   "y": 698, "width":  83, "height": 15},
+    {"x": 112,  "y": 791, "width": 189, "height": 16},
+
+    {"x": 340,  "y": 143, "width": 661, "height":  8},
+    {"x": 666,  "y": 170, "width":  86, "height":  9},
+    {"x": 810,  "y": 202, "width": 138, "height": 12},
+    {"x": 651,  "y": 245, "width":  39, "height": 10},
+    {"x": 340,  "y": 298, "width": 283, "height": 15},
+    {"x": 343,  "y": 396, "width": 189, "height": 16},
+    {"x": 333,  "y": 500, "width": 161, "height": 17},
+    {"x": 800,  "y": 600, "width": 176, "height": 18},
+    {"x": 343,  "y": 616, "width": 278, "height": 19},
+    {"x": 653,  "y": 657, "width": 239, "height": 17},
+    {"x": 323,  "y": 800, "width": 479, "height": 21},
+        
+    {"x": 1140,  "y":  43, "width":  81, "height":  8},
+    {"x": 1261,  "y": 170, "width":  86, "height":  9},
+    {"x": 1164,  "y": 202, "width":  60, "height": 11},
+    {"x": 1253,  "y": 245, "width":  95, "height":  10},
+    {"x": 1162,  "y": 312, "width":  83, "height": 15},
+    {"x": 1000,  "y": 366, "width":  69, "height": 16},
+    {"x": 1405,  "y": 381, "width":  78, "height": 14},
+    {"x": 1083,  "y": 396, "width": 393, "height": 15},
+    {"x":  839,  "y": 496, "width": 343, "height": 16},
+    {"x": 1163,  "y": 557, "width": 322, "height": 17},
+    {"x":  845,  "y": 653, "width": 349, "height": 21},
+    {"x": 1167,  "y": 787, "width": 351, "height": 17},
+    {"x":  840,  "y": 922, "width": 362, "height": 21},
+
+    {"x": 1540,  "y": 143, "width": 181, "height":  8},
+    {"x": 1901,  "y": 170, "width":  86, "height":  9},
+    {"x": 1764,  "y": 192, "width":  60, "height": 11},
+    {"x": 1513,  "y": 205, "width":  95, "height":  10},
+    {"x": 1502,  "y": 245, "width":  83, "height": 15},
+    {"x": 1832,  "y": 284, "width":  69, "height": 16},
+    {"x": 1505,  "y": 291, "width":  78, "height": 14},
+    {"x": 1783,  "y": 398, "width": 393, "height": 15},
+    {"x": 1519,  "y": 454, "width": 343, "height": 16},
+    {"x": 1663,  "y": 485, "width": 322, "height": 17},
+    {"x": 1705,  "y": 509, "width": 349, "height": 21},
+    {"x": 1767,  "y": 532, "width": 351, "height": 17},
+    {"x": 1763,  "y": 576, "width": 362, "height": 21},
+    {"x": 1539,  "y": 625, "width": 343, "height": 16},
+    {"x": 1863,  "y": 753, "width": 172, "height": 17},
+    {"x": 1545,  "y": 856, "width": 349, "height": 21},
+
+    {"x": 2254,  "y": 143, "width":  81, "height":  8},
+    {"x": 2001,  "y": 210, "width":  86, "height":  9},
+    {"x": 2264,  "y": 215, "width":  60, "height": 11},
+    {"x": 2250,  "y": 306, "width":  95, "height": 10},    
+    {"x": 2156,  "y": 407, "width": 169, "height": 16},
+    {"x": 1902,  "y": 486, "width": 198, "height": 14},
+    {"x": 2200,  "y": 545, "width": 253, "height": 15},
+    {"x": 2000,  "y": 675, "width": 343, "height": 16},
+    {"x": 2333,  "y": 735, "width": 322, "height": 17},
+    {"x": 2000,  "y": 850, "width": 349, "height": 21},
+    
+    {"x": 0, "y": 1100, "width": 2500, "height": 100}
+  ],
+  "coins": [
+    {"x":  666, "y": 770},
+    {"x": 1380, "y": 510},
+    {"x": 2400, "y": 700}
+  ],
+
+  "key": {"x": 1150, "y": 870},
+  "door": {"x": 2390, "y": 1000, "width": 50, "height": 100},
+  "goal": {"x": 2440, "y": 1050},
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 1000,
+      "behavior": "patrol",
+      "patrolLeft":  700,
+      "patrolRight": 900,
+      "speed": 1.2,
+      "dialog": [
+        "Hier sind die Braumkronen wieder dichter.",
+        "Da ist doch mit Sicherheit etwas versteckt.",
+        "Such dir den Weg über die Äste!"
+      ]
+    }
+  ],  
+
+  "playerStart": {"x": 150, "y": 1000}
+}

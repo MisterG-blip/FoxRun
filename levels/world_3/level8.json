@@ -1,0 +1,94 @@
+{
+  "id": 28,
+  "worldId": "world3",
+  "name": "Die vergessene Lichtung",
+  "story": "Tief im Wald... ist er hier?",
+  "width": 2500,
+  "height": 1200,
+  "walls": [
+    {"x": 0, "y": 0, "width": 2500, "height": 20},
+    {"x": 0, "y": 1180, "width": 2500, "height": 20},
+    {"x": 0, "y": 0, "width": 20, "height": 1200},
+    {"x": 2480, "y": 0, "width": 20, "height": 1200},
+
+    {"x": 500,  "y": 500, "width": 20, "height": 250},
+    {"x": 500,  "y": 800, "width": 20, "height": 250},
+    {"x": 2000, "y": 240, "width": 20, "height": 200},
+    {"x": 2000, "y": 500, "width": 20, "height": 550},
+
+    {"x": 166,  "y": 850, "width": 333, "height": 20},
+    {"x": 20,   "y": 650, "width": 166, "height": 20},
+    {"x": 166,  "y": 600, "width": 333, "height": 20},
+    {"x": 166,  "y": 550, "width": 333, "height": 20},
+    {"x": 166,  "y": 400, "width": 333, "height": 20},
+    {"x": 112,  "y": 300, "width": 166, "height": 20},
+    {"x": 166,  "y": 200, "width": 333, "height": 20},
+    {"x": 210,  "y": 150, "width": 166, "height": 20},
+    {"x": 385,  "y": 100, "width": 333, "height": 20},
+    
+    {"x": 500,  "y": 900, "width": 333, "height": 20},
+    {"x": 833,  "y": 850, "width": 333, "height": 20},
+    {"x": 500,  "y": 800, "width": 333, "height": 20},
+    {"x": 833,  "y": 700, "width": 333, "height": 20},
+    {"x": 500,  "y": 620, "width": 333, "height": 20},
+    {"x": 855,  "y": 550, "width": 222, "height": 20},
+    {"x": 525,  "y": 200, "width": 200, "height": 20},
+    {"x": 500,  "y": 450, "width": 333, "height": 20},
+    {"x": 995,  "y": 276, "width": 166, "height": 20},
+    {"x": 666,  "y": 200, "width": 333, "height": 20},
+    {"x": 666,  "y": 250, "width": 333, "height": 20},
+    {"x": 666,  "y":  50, "width": 663, "height": 20},
+
+    {"x": 1500,  "y": 900, "width": 303, "height": 20},
+    {"x": 1833,  "y": 850, "width": 163, "height": 20},
+    {"x": 1500,  "y": 800, "width": 416, "height": 20},
+    {"x": 1633,  "y": 700, "width":  83, "height": 20},
+    {"x": 1833,  "y": 620, "width":  43, "height": 20},
+    {"x": 1855,  "y": 550, "width": 322, "height": 20},
+    {"x": 1532,  "y": 210, "width": 320, "height": 20},
+    {"x": 1735,  "y": 422, "width": 160, "height": 20},
+    {"x": 1635,  "y": 350, "width": 200, "height": 20},
+    {"x": 1840,  "y": 200, "width": 333, "height": 20},
+    {"x": 1570,  "y": 250, "width": 333, "height": 20},
+    
+    {"x": 2000,  "y": 915, "width": 303, "height": 20},
+    {"x": 2166,  "y": 755, "width": 163, "height": 20},
+    {"x": 2033,  "y": 610, "width": 216, "height": 20},
+    {"x": 2000,  "y": 500, "width": 383, "height": 20},
+    {"x": 2155,  "y": 391, "width": 243, "height": 20},
+    {"x": 2235,  "y": 305, "width": 161, "height": 20},
+    {"x": 2132,  "y": 285, "width": 316, "height": 20},
+    {"x": 2235,  "y": 155, "width": 222, "height": 20},
+    {"x": 2035,  "y":  50, "width": 200, "height": 20},
+
+    {"x": 0, "y": 1100, "width": 2500, "height": 100}
+  ],
+  "coins": [
+    {"x": 559, "y":  70},
+    {"x": 840, "y": 170},
+    {"x": 1500,"y": 120}
+  ],
+
+  "key": {"x": 1150, "y": 1070},
+  "door": {"x": 2390, "y": 1000, "width": 50, "height": 100},
+  "goal": {"x": 2440, "y": 1050},
+
+  "npcs": [
+    {
+      "id": "fox_guard",
+      "x": 650,
+      "y": 860,
+      "behavior": "patrol",
+      "patrolLeft":  700,
+      "patrolRight": 900,
+      "speed": 1.2,
+      "dialog": [
+        "Noch mehr Fallen.",
+        "Irgendwie hängen sie miteinernander zusammen.",
+        "Es gibt scheinbar einen Hauptschalter."
+      ]
+    }
+  ], 
+
+  "playerStart": {"x": 150, "y": 1000}
+}
