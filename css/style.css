@@ -39,7 +39,7 @@ body {
     width: 100vw;
     height: 75vw; /* 4:3 */
     max-width: 133.33vh; /* wenn Höhe limitiert */
-    max-height: 100vh;
+    max-height: 90vh;
     border-radius: 0;
     border: none;
     margin: 0;
